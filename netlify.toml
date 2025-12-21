@@ -1,10 +1,9 @@
 [build]
-  base = "frontend"
-  command = "npm run build"
-  publish = "dist"
+  command = "npm run build --prefix frontend"
+  publish = "frontend/dist"
+  functions = "netlify/functions"
 
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+[dev]
+  functions = "netlify/functions"
+  command = "npm run dev --prefix frontend"
+  port = 5173
