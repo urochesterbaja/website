@@ -1,9 +1,22 @@
 import { NavLink } from "react-router-dom";
+import { useState, useEffect } from "react"
 import "./Nav.css";
 
 function Navbar() {
+  {/*scroll functionality, changes style when scrolling to match background */}
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 260);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  
   return (
-    <nav className="navbar">
+    <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <h1 className="logo">
         <NavLink to="/" end>
           YELLOWJACKET RACING
