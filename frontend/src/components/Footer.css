@@ -1,0 +1,100 @@
+.footer {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 40px;
+    background-color: #001E5F;
+    color: whitesmoke;
+}
+
+.footer-content {
+    display: flex;
+    align-items: center;        
+    justify-content: space-between;
+    width: 100%;
+    position: relative;     
+}
+
+.raised-box {
+    position: relative;
+    top: -4rem;
+    background-color: whitesmoke;
+    color: #001E5F;
+    padding: 1.5rem;
+    padding-top: .3rem;
+    border-radius: 12px;
+    border-top: 1rem solid #021BC3;
+    width: 30rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    flex-shrink: 0;
+}
+
+.icon-row a {
+    margin-right: 12px;
+    color: #001E5F;
+    font-size: 24px;
+    transition: color 0.3s;
+}
+
+.icon-row a:hover {
+  color: #FFD82B;
+}
+
+#facebook {
+    color: #4267B2;
+}
+
+#instagram {
+    color: #E1306C;
+}
+
+#youtube {
+    color: #FF0000
+}
+
+#linkedin {
+    color: #0077B5;
+}
+
+.main-text {
+    flex: 1;                 
+    display: flex;
+    align-items: center;     
+    justify-content: center;
+    text-align: center;
+    font-size: 1.5rem;
+    flex-direction: column;
+    gap: .3rem;
+}
+
+.subscribe-form {
+  display: inline-flex;
+}
+
+.subscribe-form input {
+  padding: 0.75rem 1rem;
+  border: 1px solid #ccc;
+  border-right: none;           
+  border-radius: 6px 0 0 6px;
+  font-size: 1rem;
+  outline: none;
+  background-color: whitesmoke;
+  color: black;
+  width:fit-content;
+}
+
+.subscribe-form button {
+  padding: 0.75rem 1.25rem;
+  border: 1px solid #ccc;
+  border-radius: 0 6px 6px 0;    
+  background-color: rgb(4, 4, 4);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.subscribe-form button:hover {
+  background-color: #00308f;
+}

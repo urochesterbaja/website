@@ -12,6 +12,7 @@ function Navbar() {
 
       <ul className="nav-links">
 
+        {/* The dropdown links are nested in a dropdown class with a NavLink being the "main" button and a dropdown menu for the extras */}
         <li className="dropdown">
           <NavLink to="/" end>About</NavLink>
           <ul className="dropdown-menu">
