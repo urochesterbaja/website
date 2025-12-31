@@ -1,10 +1,13 @@
-import "./Sponsorship.css"
+import "./Sponsorship.css";
+import SponsorBlock from "../components/SponsorBlock";
+import { SponsorBlockLists } from "../components/SponsorBlockLists"
+
 
 export default function Sponsorship() {
     return (
         <div className="page-container">
             <div className="content">
-                <h1>Sponsorship</h1>
+                <SponsorBlock tier="Platinum" imgList={SponsorBlockLists["Platinum"]}/>
             </div>
         </div>
     );
