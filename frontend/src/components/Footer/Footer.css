@@ -28,6 +28,11 @@
     width: 30rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     flex-shrink: 0;
+    transition: visibility 0.3s ease;
+}
+
+.footer--scrolled .raised-box{
+  visibility: visible;
 }
 
 .icon-row a {

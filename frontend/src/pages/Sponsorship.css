@@ -13,9 +13,3 @@
     background-position: center;
     z-index: -1;
 }
-
-.content {
-  position: relative;
-  margin-top: 100vh; 
-  padding: 2rem;
-}

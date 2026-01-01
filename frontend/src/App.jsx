@@ -1,10 +1,11 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { useRef } from "react";
 import Home from "./pages/Home";
 import Sponsorship from "./pages/Sponsorship"
-import Navbar from "./components/Nav"
-import Hero from "./components/Hero"
-import Footer from "./components/Footer"
-import { HeroPropsMap } from "./components/HeroPropsMap"
+import Navbar from "./components/Navbar/Nav"
+import Hero from "./components/Hero/Hero"
+import Footer from "./components/Footer/Footer"
+import { HeroPropsMap } from "./components/Hero/HeroPropsMap"
 import './App.css'
 
 /* Layout function is here so whole function can be wrapped in BrowserRouter.
@@ -12,6 +13,7 @@ import './App.css'
 function Layout() {
   const location = useLocation();
   let pageKey = location.pathname;
+  const footerRef = useRef(null);
   return (
     <>
       <Navbar />
@@ -20,7 +22,7 @@ function Layout() {
         <Route path="/" element={<Home/>} />
         <Route path="/sponsorship" element={<Sponsorship/>} />
       </Routes>
-      <Footer />
+      <Footer/>
     </>
   );
 }
