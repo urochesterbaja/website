@@ -6,6 +6,7 @@
     padding: 40px;
     background-color: #001E5F;
     color: whitesmoke;
+    margin-top: 5rem;
 }
 
 .footer-content {
@@ -39,11 +40,11 @@
     margin-right: 12px;
     color: #001E5F;
     font-size: 24px;
-    transition: color 0.3s;
+    transition: scale 0.3s;
 }
 
 .icon-row a:hover {
-  color: #FFD82B;
+  scale: 1.3
 }
 
 #facebook {

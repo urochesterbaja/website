@@ -1,31 +1,44 @@
 import "./ContentBlock.css"
 
-function ContentBlock({title, imgURL, content, content2, flip= "false"}) {
-    if (flip == "false") {
+function ContentBlock({title, imgURL = null, content, content2 = null, flip= false, buttonText = null, buttonLink = null}) {
+    const hasImage = Boolean(imgURL)
+    const img = hasImage ? <div className="image-container"><img src={imgURL}></img></div> : null
+    const button = buttonText ? <div className="button-container"><button>{buttonText}</button></div> : null
+
+    const textClass = hasImage
+        ? "text-container"
+        : "text-container text-centered"
+    const flippedTextClass = hasImage
+        ? "text-container-flipped"
+        : "text-container-flipped text-centered"
+
+    if (!flip) {
         return (
             <div className="content-block">
-                <div className="image-container">
-                    <img src= {imgURL}></img>
+                <div className="content-row">
+                    {img}
+                    <div className={textClass}>
+                        <h2>{title}</h2>
+                        <p>{content}</p>
+                        <p>{content2}</p>
+                    </div>
                 </div>
-                <div className="text-container">
-                    <h2>{title}</h2>
-                    <p>{content}</p>
-                    <p>{content2}</p>
-                </div>
+                {button}
             </div>
-        )
+        );
     }
-    if (flip == "true") {
+    if (flip) {
         return (
             <div className="content-block">
-                <div className="text-container-flipped">
-                    <h2>{title}</h2>
-                    <p>{content}</p>
-                    <p>{content2}</p>
+                <div className="content-row">
+                    <div className={flippedTextClass}>
+                        <h2>{title}</h2>
+                        <p>{content}</p>
+                        <p>{content2}</p>
+                    </div>
+                    {img}
                 </div>
-                <div className="image-container">
-                    <img src= {imgURL}></img>
-                </div>
+                {button}
             </div>
         )
     }
