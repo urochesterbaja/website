@@ -29,21 +29,27 @@ function Navbar() {
         <li className="dropdown">
           <NavLink to="/" end>About</NavLink>
           <ul className="dropdown-menu">
-            <li><NavLink to="our-team">Our Team</NavLink></li>
-            <li><NavLink to="subsystems">Subsystems</NavLink></li>
+            <li><NavLink to="/#our-team">Our Team</NavLink></li>
+            <li><NavLink to="/#subsystems">Subsystems</NavLink></li>
           </ul>
         </li>
 
         <li className="dropdown">
           <NavLink to="/news">News</NavLink>
           <ul className="dropdown-menu">
-            <li><NavLink to="newsletters">Newsletters</NavLink></li>
-            <li><NavLink to="gallery">Gallery</NavLink></li>
+            <li><NavLink to="/news#newsletters">Newsletters</NavLink></li>
+            <li><NavLink to="/news#gallery">Gallery</NavLink></li>
           </ul>
         </li>
         
         <li><NavLink to="/results">Results</NavLink></li>
-        <li><NavLink to="/sponsorship">Sponsorship</NavLink></li>
+        <li className="dropdown">
+          <NavLink to="/sponsorship">Sponsorship</NavLink>
+          <ul className="dropdown-menu">
+            <li><NavLink to="/sponsorship#sponsors">Sponsors</NavLink></li>
+            <li><NavLink to="/sponsorship#donate">Donate</NavLink></li>
+            </ul>
+          </li>
         <li><NavLink to="/contact">Contact Us</NavLink></li>
       </ul>
     </nav>

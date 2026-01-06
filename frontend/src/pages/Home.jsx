@@ -1,7 +1,19 @@
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+
 import "./Home.css"
 import ContentBlock from "../components/ContentBlock/ContentBlock.jsx"
 
 export default function Home() {
+    const { hash } = useLocation();
+
+    useEffect(() => {
+    if (!hash) return;
+
+    const el = document.querySelector(hash);
+    el?.scrollIntoView({ behavior: "smooth" });
+    }, [hash]);
+
     return (
         <div className="page-container">
             <ContentBlock title="Title" imgURL="/banner_image_temp.png" content="idk put stuff here lmao" content2="second paragraph if you want. this whole block will flex depending on how much text there is so if there's a lot of text the image will get smaller."/>

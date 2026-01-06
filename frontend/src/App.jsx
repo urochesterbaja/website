@@ -13,11 +13,10 @@ import './App.css'
 function Layout() {
   const location = useLocation();
   let pageKey = location.pathname;
-  const footerRef = useRef(null);
   return (
     <>
       <Navbar />
-      <Hero {...HeroPropsMap[pageKey]}/>
+      <Hero {...HeroPropsMap[pageKey]} key={pageKey}/>
       <Routes>
         <Route path="/" element={<Home/>} />
         <Route path="/sponsorship" element={<Sponsorship/>} />

@@ -9,3 +9,7 @@ body {
 * {
   box-sizing: border-box;
 }
+
+section {
+  scroll-margin-top: 80px;
+}
