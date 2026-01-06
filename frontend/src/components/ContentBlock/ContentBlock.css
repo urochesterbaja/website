@@ -21,6 +21,14 @@
     width: 100%
 }
 
+.content-row.has-image {
+    justify-content: space-between;
+}
+
+.content-row.no-image {
+    justify-content: center;
+}
+
 .image-container {
     width: fit-content;
     padding: 20px;
@@ -65,4 +73,22 @@ img {
     display: flex;
     justify-content: center;
     width: 100%;
+}
+
+.big-button {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  border: 1px solid #ccc;
+  border-radius: 16px 16px 16px 16px;    
+  background-color: rgb(6, 6, 6);
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.big-button:hover {
+  background-color: #00308f;
 }

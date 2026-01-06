@@ -2,9 +2,17 @@ import "./ContentBlock.css"
 
 function ContentBlock({title, imgURL = null, content, content2 = null, flip= false, buttonText = null, buttonLink = null}) {
     const hasImage = Boolean(imgURL)
-    const img = hasImage ? <div className="image-container"><img src={imgURL}></img></div> : null
-    const button = buttonText ? <div className="button-container"><button>{buttonText}</button></div> : null
 
+    //this line sets the image element to either null or the image that was input (defaults to null)
+    const img = hasImage ? <div className="image-container"><img src={imgURL}></img></div> : null
+
+    //this line does the same but with button
+    const button = buttonText ? <div className="button-container"><button className="big-button"><i>{buttonText}</i></button></div> : null
+
+    const content2Node = content2 ? <p>{content2}</p> : null
+
+    //these two adjust the centering property of the text container depending on if there's an image
+    //if there is an image, text is left/right aligned (depending on flip) and no image centers text
     const textClass = hasImage
         ? "text-container"
         : "text-container text-centered"
@@ -12,29 +20,31 @@ function ContentBlock({title, imgURL = null, content, content2 = null, flip= fal
         ? "text-container-flipped"
         : "text-container-flipped text-centered"
 
+    //if the text box is not flipped, return with image on the left
     if (!flip) {
         return (
             <div className="content-block">
-                <div className="content-row">
+                <div className={`content-row ${hasImage ? "has-image" : "no-image"}`}>
                     {img}
                     <div className={textClass}>
                         <h2>{title}</h2>
                         <p>{content}</p>
-                        <p>{content2}</p>
+                        {content2Node}
                     </div>
                 </div>
                 {button}
             </div>
         );
     }
+    //if the text box is flipped, return with image on the right
     if (flip) {
         return (
             <div className="content-block">
-                <div className="content-row">
+                <div className={`content-row ${hasImage ? "has-image" : "no-image"}`}>
                     <div className={flippedTextClass}>
                         <h2>{title}</h2>
                         <p>{content}</p>
-                        <p>{content2}</p>
+                        {content2Node}
                     </div>
                     {img}
                 </div>

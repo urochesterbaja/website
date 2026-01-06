@@ -13,7 +13,7 @@ export default function Sponsorship() {
                 <SponsorBlock tier="GOLD" imgList={SponsorBlockLists["Gold"]}/>
                 <SponsorBlock tier="SILVER" imgList={SponsorBlockLists["Silver"]}/>
                 <SponsorBlock tier="BRONZE" imgList={SponsorBlockLists["Bronze"]}/>
-                <ContentBlock title="DONATE" content="pls give us money..." buttonText="Donate Now" buttonLink={donateLink}></ContentBlock>
+                <ContentBlock title= "DONATE" content="pls give us money" buttonText = "Make A Donation" buttonLink={donateLink}></ContentBlock>
         </div>
     );
 };
