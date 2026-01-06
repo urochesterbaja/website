@@ -7,7 +7,7 @@ function ContentBlock({title, imgURL = null, content, content2 = null, flip= fal
     const img = hasImage ? <div className="image-container"><img src={imgURL}></img></div> : null
 
     //this line does the same but with button
-    const button = buttonText ? <div className="button-container"><button className="big-button"><i>{buttonText}</i></button></div> : null
+    const button = buttonText ? <div className="button-container"><a className="big-button" href={buttonLink} target="_blank" rel="noopener noreferrer"><i>{buttonText}</i></a></div> : null
 
     const content2Node = content2 ? <p>{content2}</p> : null
 

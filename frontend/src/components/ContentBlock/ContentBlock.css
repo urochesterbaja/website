@@ -76,19 +76,20 @@ img {
 }
 
 .big-button {
-  padding-left: 3rem;
-  padding-right: 3rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
   padding-top: .75rem;
   padding-bottom: .75rem;
   border: 1px solid #ccc;
   border-radius: 16px 16px 16px 16px;    
   background-color: rgb(6, 6, 6);
   color: white;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .big-button:hover {
   background-color: #00308f;
+  color: white;
 }
