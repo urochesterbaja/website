@@ -63,7 +63,7 @@ function Navbar() {
           </ul>
         </li>
         
-        <li><NavLink to="/results" onClick={closeMenu}>Results</NavLink></li>
+        <li className="dropdown"><NavLink to="/results" onClick={closeMenu}>Results</NavLink></li>
 
         <li className="dropdown">
           <NavLink to="/sponsorship" onClick={closeMenu}>Sponsorship</NavLink>
@@ -73,7 +73,7 @@ function Navbar() {
             </ul>
           </li>
 
-        <li><NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink></li>
+        <li className="dropdown"><NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink></li>
       </ul>
     </nav>
   );
