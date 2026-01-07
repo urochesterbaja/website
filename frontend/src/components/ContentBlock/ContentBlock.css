@@ -106,11 +106,11 @@ img {
 
     .text-container, .text-container-flipped {
         padding: .1rem;
-        line-height: 1.1rem;
+        line-height: 1.6rem;
     }
 
     .content-block {
-
+        width: 90%;
     }
 
 }
