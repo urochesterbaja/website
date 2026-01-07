@@ -104,3 +104,14 @@
 .subscribe-form button:hover {
   background-color: #00308f;
 }
+
+@media (max-width: 1200px) {
+  .footer {
+    flex-direction: column
+  }
+
+  .footer-content{
+    flex-direction: column
+  }
+
+}

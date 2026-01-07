@@ -26,7 +26,7 @@
 .logo {
   margin-left: 1rem;
   margin-right: 1rem;
-  margin-top: .5rem;
+  margin-top: .3rem;
   margin-bottom: .5rem;
 }
 
@@ -130,7 +130,6 @@
   transform: translateY(0);
 }
 
-/* Hamburger button */
 .hamburger {
   display: none;
   font-size: 2rem;
@@ -141,8 +140,15 @@
   margin-right: 1rem;
 }
 
-/* Mobile styles */
-@media (max-width: 768px) {
+@media (max-width: 1050px) {
+  .navbar {
+    height: 6rem;
+  }
+
+  .navbar--scrolled {
+    height: 3rem;
+  }
+
   .hamburger {
     display: block;
   }
@@ -168,7 +174,6 @@
     justify-content: center;
   }
 
-  /* Disable hover dropdowns on mobile */
   .dropdown-menu {
     position: static;
     opacity: 1;
@@ -177,5 +182,26 @@
     box-shadow: none;
     background: transparent;
     padding-left: 1rem;
+  }
+
+  .logo {
+  margin-left: 1rem;
+  margin-right: .5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  }
+
+.logo a {
+  text-decoration: italic;
+  color: #001E5F;
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+}
+
+@media(max-width: 500px) {
+  .logo{
+    font-size: 1rem;
+    line-height: 1rem;
   }
 }

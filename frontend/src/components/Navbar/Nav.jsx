@@ -23,7 +23,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <h1 className="logo">
         <NavLink to="/" end onClick={closeMenu}>
-          YELLOWJACKET RACING
+          <i>YELLOWJACKET RACING</i>
         </NavLink>
       </h1>
 
