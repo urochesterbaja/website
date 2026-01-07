@@ -115,7 +115,9 @@
   }
 
   .raised-box {
-    width: 20rem;
+    width:fit-content;
+    margin-left: auto;
+    margin-right: auto;
   }
 
 }
