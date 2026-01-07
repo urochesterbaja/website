@@ -14,43 +14,53 @@ function Navbar() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  {/*mobile menu stuff*/}
+  const [menuOpen, setMenuOpen] = useState(false);
+  const closeMenu = () => setMenuOpen(false);
   
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <h1 className="logo">
-        <NavLink to="/" end>
+        <NavLink to="/" end onClick={closeMenu}>
           YELLOWJACKET RACING
         </NavLink>
       </h1>
 
-      <ul className="nav-links">
+      {/* Hamburger button (mobile only via CSS) */}
+      <button className="hamburger" onClick={() => setMenuOpen(!menuOpen)} aria-label="Toggle navigation">
+        ☰
+      </button>
 
+      <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
         {/* The dropdown links are nested in a dropdown class with a NavLink being the "main" button and a dropdown menu for the extras */}
         <li className="dropdown">
-          <NavLink to="/" end>About</NavLink>
+          <NavLink to="/" onClick={closeMenu}>About</NavLink>
           <ul className="dropdown-menu">
-            <li><NavLink to="/#our-team">Our Team</NavLink></li>
-            <li><NavLink to="/#subsystems">Subsystems</NavLink></li>
+            <li><NavLink to="/#our-team" onClick={closeMenu}>Our Team</NavLink></li>
+            <li><NavLink to="/#subsystems" onClick={closeMenu}>Subsystems</NavLink></li>
           </ul>
         </li>
 
         <li className="dropdown">
-          <NavLink to="/news">News</NavLink>
+          <NavLink to="/news" onClick={closeMenu}>News</NavLink>
           <ul className="dropdown-menu">
-            <li><NavLink to="/news#newsletters">Newsletters</NavLink></li>
-            <li><NavLink to="/news#gallery">Gallery</NavLink></li>
+            <li><NavLink to="/news#newsletters" onClick={closeMenu}>Newsletters</NavLink></li>
+            <li><NavLink to="/news#gallery" onClick={closeMenu}>Gallery</NavLink></li>
           </ul>
         </li>
         
-        <li><NavLink to="/results">Results</NavLink></li>
+        <li><NavLink to="/results" onClick={closeMenu}>Results</NavLink></li>
+
         <li className="dropdown">
-          <NavLink to="/sponsorship">Sponsorship</NavLink>
+          <NavLink to="/sponsorship" onClick={closeMenu}>Sponsorship</NavLink>
           <ul className="dropdown-menu">
-            <li><NavLink to="/sponsorship#sponsors">Sponsors</NavLink></li>
-            <li><NavLink to="/sponsorship#donate">Donate</NavLink></li>
+            <li><NavLink to="/sponsorship#sponsors" onClick={closeMenu}>Sponsors</NavLink></li>
+            <li><NavLink to="/sponsorship#donate" onClick={closeMenu}>Donate</NavLink></li>
             </ul>
           </li>
-        <li><NavLink to="/contact">Contact Us</NavLink></li>
+
+        <li><NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink></li>
       </ul>
     </nav>
   );

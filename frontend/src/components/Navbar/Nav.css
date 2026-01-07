@@ -129,3 +129,53 @@
   visibility: visible;
   transform: translateY(0);
 }
+
+/* Hamburger button */
+.hamburger {
+  display: none;
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: #001E5F;
+  cursor: pointer;
+  margin-right: 1rem;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 5rem;
+    left: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.97);
+    border-top: 1px solid rgba(0, 30, 95, 0.15);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-links li {
+    padding: 1rem;
+    border: none;
+    justify-content: center;
+  }
+
+  /* Disable hover dropdowns on mobile */
+  .dropdown-menu {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    box-shadow: none;
+    background: transparent;
+    padding-left: 1rem;
+  }
+}
