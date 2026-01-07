@@ -18,6 +18,19 @@ function Navbar() {
   {/*mobile menu stuff*/}
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+  if (menuOpen) {
+    document.body.classList.add("nav-open");
+  } else {
+    document.body.classList.remove("nav-open");
+  }
+
+  // cleanup in case component unmounts
+  return () => {
+    document.body.classList.remove("nav-open");
+  };
+  }, [menuOpen]);
   
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
