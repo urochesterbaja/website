@@ -9,14 +9,17 @@ import { SponsorBlockLists } from "../components/SponsorBlock/SponsorBlockLists"
 
 export default function Sponsorship() {
     const donateLink = "https://securelb.imodules.com/s/1676/giving4/giving4.aspx?sid=1676&gid=2&pgid=824&cid=1657&appealcode=18C3L&bledit=1&dids=419"
-    const { hash } = useLocation();
+    const { hash, pathname } = useLocation();
 
     useEffect(() => {
-    if (!hash) return;
-
-    const el = document.querySelector(hash);
-    el?.scrollIntoView({ behavior: "smooth" });
-    }, [hash]);
+    if (hash) {
+        const el = document.querySelector(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+    }
+    else {
+        window.scrollTo({top : 0, behavior: "smooth"});
+    }
+    }, [hash, pathname]);
 
     return (
         <div className="page-container">

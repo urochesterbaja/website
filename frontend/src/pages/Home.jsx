@@ -5,14 +5,17 @@ import "./Home.css"
 import ContentBlock from "../components/ContentBlock/ContentBlock.jsx"
 
 export default function Home() {
-    const { hash } = useLocation();
+    const { hash, pathname } = useLocation();
 
     useEffect(() => {
-    if (!hash) return;
-
-    const el = document.querySelector(hash);
-    el?.scrollIntoView({ behavior: "smooth" });
-    }, [hash]);
+    if (hash) {
+        const el = document.querySelector(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+    }
+    else {
+        window.scrollTo({top : 0, behavior: "smooth"});
+    }
+    }, [hash, pathname]);
 
     return (
         <div className="page-container">
