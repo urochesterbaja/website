@@ -22,7 +22,7 @@ function Footer() {
                 </div>
                 <div className= "main-text">
                     <p>Want to hear more from us? Enter your email to subscribe to our newsletter!</p>
-                    <form class="subscribe-form">
+                    <form className="subscribe-form">
                         <input
                             type="email"
                             placeholder="example@mail.com"

@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { useRef } from "react";
 import Home from "./pages/Home";
+import News from "./pages/News"
 import Sponsorship from "./pages/Sponsorship"
 import Navbar from "./components/Navbar/Nav"
 import Hero from "./components/Hero/Hero"
@@ -19,6 +19,7 @@ function Layout() {
       <Hero {...HeroPropsMap[pageKey]} key={pageKey}/>
       <Routes>
         <Route path="/" element={<Home/>} />
+        <Route path="/news" element={<News/>} />
         <Route path="/sponsorship" element={<Sponsorship/>} />
       </Routes>
       <Footer/>

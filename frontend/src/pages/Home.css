@@ -1,3 +1,19 @@
 .page-container {
   position: relative;
+  text-align: center;
+}
+
+.light-background {
+  width: 100%;
+  height: fit-content;
+  background-color: lightgrey;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  color: #001E5F;
+  text-align: center;
+  /*
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='400' height='60'%3E%3Ctext x='0' y='50' fill='%23cccccc' font-size='30' font-family='Arial' font-weight='bold' font-style='italic' %3EYELLOWJACKET RACING%3C/text%3E%3C/svg%3E");
+    background-repeat: repeat;
+    background-attachment: fixed;
+    */
 }

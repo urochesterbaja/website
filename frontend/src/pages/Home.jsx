@@ -3,6 +3,8 @@ import { useLocation } from "react-router-dom";
 
 import "./Home.css"
 import ContentBlock from "../components/ContentBlock/ContentBlock.jsx"
+import TeamBlock from "../components/TeamBlock/TeamBlock.jsx"
+import { TeamMembers } from "../components/TeamBlock/TeamMembers"
 
 export default function Home() {
     const { hash, pathname } = useLocation();
@@ -19,8 +21,29 @@ export default function Home() {
 
     return (
         <div className="page-container">
-            <ContentBlock title="Title" imgURL="/banner_image_temp.png" content="idk put stuff here lmao" content2="second paragraph if you want. this whole block will flex depending on how much text there is so if there's a lot of text the image will get smaller."/>
-            <ContentBlock title="another content block" imgURL="/banner_image_temp.png" content="man i'm really getting sick of this image. what if i just typed a bunch of random shit in here aabababababababababababa hehehehhe" flip="true" />
+            <ContentBlock 
+                title="Who We Are" 
+                content="Yellowjacket Racing UR Baja SAE is a student-run, non-profit organization which designs, fabricates, tests, and competes with a single-seater off-road vehicle. From engineering and applied science to business and marketing, our team welcomes anyone who is interested in hands-on STEM experience!" 
+                content2="Whether you have built a car from scratch or have never touched a wrench in your life, we will utilize any of your experience and will teach you designing, manufacturing, and testing methods."
+            />
+            <ContentBlock title="What We Do" 
+                content="blurb two" 
+                />
+
+            <section id="our-team">
+                <div className = "light-background">
+                    <h1>Our Team</h1>
+                    <TeamBlock name="Executive Board" memberList={TeamMembers["Executive Board"]}></TeamBlock>
+                    <TeamBlock name="Subsystem Leads" memberList={TeamMembers["Subsystem Leads"]}></TeamBlock>
+                    <TeamBlock name="Project Team Leads" memberList={TeamMembers["Project Team Leads"]}></TeamBlock>
+                </div>
+            </section>
+
+            <section id="subsystems">
+                <h1>Subsystems</h1>
+                <ContentBlock title = "name" content="blurb" imgURL="/banner_image_temp.png"/>
+                <ContentBlock title = "name" content="blurb" imgURL="/banner_image_temp.png" flip="true"/>
+            </section>
         </div>
     );
 };

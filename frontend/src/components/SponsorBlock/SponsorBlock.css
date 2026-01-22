@@ -1,5 +1,4 @@
 .sponsor-block {
-    max-width: 1200px;        
     width: 90%;               
     margin: 3rem auto;        
 
@@ -17,12 +16,13 @@
 
 }
 
-.sponsor-block h2 {
+.sponsor-heading {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
     font-family: rubik;
-    margin-top: .7rem;
+    margin-top: .3rem;
+    margin-bottom: .3rem;
 }
 
 .img-container {
@@ -47,6 +47,16 @@
 }
 
 .img-container a:hover img {
+    transform: scale(1.05);
+}
+
+.logo-replacement {
+    color: #001E5F;
+    transition: transform 0.2s ease;
+    font-size: 1rem;
+}
+
+.logo-replacement:hover {
     transform: scale(1.05);
 }
 

@@ -11,8 +11,13 @@
     border-top: 16px solid #021BC3;
     border-radius: 16px;
     color: #001E5F;
-    max-width: 1200px;
-    width: 90%
+    width: 90%;
+}
+
+.content-block.dark-scheme{
+    color: white;
+    border-top: 16px solid #021BC3;
+    background-color: #242424;
 }
 
 .content-row{
@@ -23,7 +28,11 @@
 }
 
 .content-row.has-image {
-    justify-content: space-between;
+    justify-content: left;
+}
+
+.content-row.has-image.flipped{
+    justify-content: right;
 }
 
 .content-row.no-image {
@@ -33,6 +42,7 @@
 .image-container {
     width: fit-content;
     padding: 20px;
+    max-width: 40%
 }
 
 img {
@@ -62,6 +72,8 @@ img {
 
 .text-container h2 {
     font-size: 2rem;
+    margin-top: .1rem;
+    margin-bottom: .1rem;
 }
 
 .text-centered h2,

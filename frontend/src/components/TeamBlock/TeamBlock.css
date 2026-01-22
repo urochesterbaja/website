@@ -1,0 +1,38 @@
+.team-block {
+    width: 90%;               
+    margin: 3rem auto;        
+
+    padding: 1rem 1rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 1rem;
+
+    border-top: 16px solid #021BC3;
+    border-radius: 16px;
+    background-color: white;
+
+    color: #001E5F;
+}
+
+.team-member-container {
+    display: grid;
+    width: 80%;
+    grid-template-columns: repeat(auto-fit, 120px);
+    justify-content: center;
+    gap: 3rem;
+}
+
+.team-member {
+    transition: scale 0.2s ease
+}
+
+.team-member:hover {
+    scale: 105%
+}
+
+.team-member-image {
+    border-radius: 100%;
+}

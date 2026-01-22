@@ -1,0 +1,136 @@
+export const TeamMembers = {
+    "Executive Board" : [
+        {
+            name : "john",
+            position : "fella",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+
+        },
+        {
+            name : "joan",
+            position : "gal",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "freddy",
+            position : "director of balling",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "zofka",
+            position : "ceo of just chillin",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "leopold",
+            position : "steering wheel designer",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "my buddy alex",
+            position : "he's just my friend idk",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        }
+    ],
+    "Subsystem Leads" : [
+        {
+            name : "john",
+            position : "fella",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "joan",
+            position : "gal",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "freddy",
+            position : "director of balling",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "zofka",
+            position : "ceo of just chillin",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "leopold",
+            position : "steering wheel designer",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        }
+    ],
+    "Project Team Leads" : [
+        {
+            name : "john",
+            position : "fella",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "joan",
+            position : "gal",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "freddy",
+            position : "director of balling",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "zofka",
+            position : "ceo of just chillin",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        },
+        {
+            name : "leopold",
+            position : "steering wheel designer",
+            img: "/team_member_pics/profile-pic-default.png",
+            role: "Transmission",
+            major: "Mechanical Engineering",
+            year: "3rd",
+        }
+    ]
+}

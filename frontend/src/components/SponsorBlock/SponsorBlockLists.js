@@ -1,195 +1,104 @@
 export const SponsorBlockLists = {
-    "Platinum" : [
+    "Hive" : [
+        {
+            name : "Gene Haas Foundation",
+            img : "/sponsors/hive/GHF.png",
+            url : "https://www.ghaasfoundation.org/"
+        },
+        {
+            name: "Gleason Corporation",
+            img: "/sponsors/hive/Gleason.png",
+            url: "https://www.gleason.com/en"
+        },
         {
             name : "University of Rochester",
-            img : "/sponsors/platinum/UniversityofRochester.png",
+            img : "/sponsors/hive/UniversityofRochester.png",
             url :"https://www.rochester.edu/",
         },
         {
             name : "Solidworks",
-            img : "/sponsors/platinum/SolidWorks.png",
+            img : "/sponsors/hive/SolidWorks.png",
             url :"https://www.solidworks.com/",
         },
         {
-            name: "Skywave Communications",
-            img : "/sponsors/platinum/Skywave.jpg",
-            url :"https://www.skywave.org/",
-        },
-        {
             name: "University of Rochester Student's Association Government",
-            img : "/sponsors/platinum/URSAG.png",
+            img : "/sponsors/hive/URSAG.png",
             url :"https://sa.rochester.edu/sa/",
         },
         {
             name : "Hajim School of Engineering",
-            img : "/sponsors/platinum/Hajim.jpg",
+            img : "/sponsors/hive/Hajim.jpg",
             url :"https://www.hajim.rochester.edu/",
         },
         {
-            name : "Lotus Cars",
-            img : "/sponsors/platinum/Lotus.png",
-            url :"https://www.lotuscars.com/en-GB/engineering-software/",
-        },
-        {
             name : "KISSsoft",
-            img : "/sponsors/platinum/KISSsoft.png",
+            img : "/sponsors/hive/KISSsoft.png",
             url :"https://www.kisssoft.com/en",
         },
         {
-            name : "GMN Bearing",
-            img : "/sponsors/platinum/GMN.png",
-            url :"https://www.gmnbt.com/",
+            name : "GMN Bearings",
+            img : "/sponsors/hive/GMN.png",
+            url : "https://www.gmnbt.com/",
         },
     ],
-    "Gold" : [
-        {
-            name: "arc + flame center",
-            img: "/sponsors/gold/arc+flame.png",
-            url: "https://www.rocafc.com/"
-        },
-        {
-            name: "Paragon Steel Rule Dies",
-            img: "/sponsors/gold/paragon.jpg",
-            url: "https://www.rocafc.com/"
-        },
-        {
-            name: "DK Manufacturing",
-            img: "/sponsors/gold/DK.png",
-            url: "https://www.dkmanufacturing.com/"
-        },
-        {
-            name: "Gleason Works",
-            img: "/sponsors/gold/Gleason-Works.png",
-            url: "https://www.gleason.com/en"
-        },
-        {
-            name: "TW Metals",
-            img: "/sponsors/gold/tw-metals.png",
-            url: "https://www.twmetals.com/"
-        },
+
+    "Queen" : [
+       {
+            name : "Miller Sandblasting",
+            url : "https://www.millersandblastingandpainting.com/"
+       }
     ],
-    "Silver" : [
-        {
-            name: "Advantage Outfitters",
-            img: "/sponsors/silver/advantage-outfitters.png",
-            url: "https://www.commercialvanshelving.com/"
-        },
-        {
-            name: "kubik",
-            img: "/sponsors/silver/kubik.png",
-            url: "https://thinkubik.com/"
-        },
-        {
-            name: "Flex Seal",
-            img: "/sponsors/silver/flex-seal-logo.png",
-            url: "https://www.flexsealproducts.com/"
-        },
-        {
-            name: "Mahany Welding",
-            img: "/sponsors/silver/mahany.jpg",
-            url: "https://www.mahanyweld.com/"
-        },
+
+    "Worker" : [
         {
             name: "ASME Rochester",
-            img: "/sponsors/silver/ASME-Rochester.png",
+            img: "/sponsors/worker/ASME-Rochester.png",
             url: "https://ccc.rochester.edu/asme/home/"
         },
         {
-            name: "Van-Bortel Ford",
-            img: "/sponsors/silver/Van-Bortel.jpeg",
-            url: "https://www.vanbortelford.net/",
+            name: "TreeTop",
+            img: "/sponsors/worker/TreeTop.jpg",
+            url: "https://treetop.com/"
         },
         {
-            name: "Pro Empire",
-            img: "/sponsors/silver/Pro-Empire.png",
-            url: "https://www.proempireconstruction.com/"
+            name: "Elmira Stamping and Manufacturing",
+            url: "https://elmirastamping.com/"
         },
         {
-            name: "Rochester Gear Inc",
-            img: "/sponsors/silver/Rochester-Gear.png",
-            url: "https://rochestergear.com/"
-        },
-        {
-            name: "Camnetics",
-            img: "/sponsors/silver/Camnetics.png",
-            url: "https://camnetics.com/"
+            name: "Western NY SAE",
+            img: "/sponsors/worker/westernNYSAEBlack.png",
+            url: "https://www.sae.org/memberships/find-your-section/new-york-western-ny"
         }
     ],
-    "Bronze" : [
-        {
-            name: "Long Distance Towing",
-            img: "/sponsors/bronze/Long-Distance-Towing.jpg",
-            url: "https://longdistancetowing.com/nationwide/new-york/"
-        },
-        {
-            name: "Extreme Terrain",
-            img: "/sponsors/bronze/extreme-terrain.png",
-            url: "https://www.extremeterrain.com/"
-        },
-        {
-            name: "King Law",
-            img: "/sponsors/bronze/King-Law.jpg",
-            url: "https://www.robertkinglawfirm.com/"
-        },
-        {
-            name: "Tekton",
-            img: "/sponsors/bronze/tekton.jpg",
-            url: "https://www.tekton.com/"
-        },
+    "Drone" : [
         {
             name: "SMC Metal",
-            img: "/sponsors/bronze/SMC.png",
+            img: "/sponsors/drone/SMC.png",
             url: "https://smcmetalrochester.com/"
         },
         {
-            name: "Polaris",
-            img: "/sponsors/bronze/polaris.png",
-            url: "https://www.polaris.com/en-us/"
-        },
-        {
-            name: "Fox Shox",
-            img: "/sponsors/bronze/fox-shox.jpg",
-            url: "https://ridefox.com/"
-        },
-        {
-            name: "The Duke Company",
-            img: "/sponsors/bronze/Duke-Company.png",
-            url: "https://www.miltonrents.com"
-        },
-        {
-            name: "Briggs and Stratton",
-            img: "/sponsors/bronze/briggs-stratton.jpg",
-            url: "https://www.briggsandstratton.com/na/en_us/home.html"
-        },
-        {
-            name: "Auto Accessories Garage",
-            img: "/sponsors/bronze/auto-accessories.png",
-            url: "https://www.autoaccessoriesgarage.com/"
-        },
-        {
             name: "Wilwood Disc Brakes",
-            img: "/sponsors/bronze/wilwood.png",
+            img: "/sponsors/drone/wilwood.png",
             url: "https://www.wilwood.com/"
         },
         {
-            name: "Laird Plastics",
-            img: "/sponsors/bronze/laird-plastics.png",
-            url: "https://lairdplastics.com/"
+            name: "TW Metals",
+            img: "/sponsors/drone/tw-metals.png",
+            url: "https://www.twmetals.com/"
         },
         {
-            name: "Sixth City Marketing",
-            img: "/sponsors/bronze/sixth-city.png",
-            url: "https://www.sixthcitymarketing.com/"
+            name: "West Herr",
+            img: "/sponsors/drone/westherr.png"
         },
         {
-            name: "KMI Learning",
-            img: "/sponsors/bronze/kmi-learning.png",
-            url: "https://www.kmilearning.com/"
+            name: "US Gold and Coin",
+            img: "/sponsors/drone/us-gold-and-coin.png",
+            url: "https://usgoldandcoin.com/",
         },
         {
-            name: "Request-A-Test",
-            img: "/sponsors/bronze/request-a-test.jpg",
-            url: "https://requestatest.com/"
+            name: "AFCO",
+            img: "/sponsors/drone/afco.png",
+            url: "https://www.afcoracing.com/",
         }
     ]
 }

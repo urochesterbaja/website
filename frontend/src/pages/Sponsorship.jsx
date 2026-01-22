@@ -23,15 +23,16 @@ export default function Sponsorship() {
 
     return (
         <div className="page-container">
-            <ContentBlock title = "We value our sponsors!!" content="Blurb of we value our sponsors... I'm just gonna type a ton of stuff in here until i get more text. what if i wrote the lyrics to steely dan song. in the corner of my eye/i saw you at rudy's you were very high/you were high/ it was a crying disgrace/they saw your face/on the counter/by your keys/was a book of numbers/and your remedy/one of these/ surely will bring out the sorrow/ where are you tomorrow"/>
+            <ContentBlock title = "We value our sponsors!" content="Our team could not operate without the generous support of our local and global sponsors. We greatly appreciate all the help we have received.
+"/>
             <section id="sponsors">
-                <SponsorBlock tier="PLATINUM" imgList={SponsorBlockLists["Platinum"]}/>
-                <SponsorBlock tier="GOLD" imgList={SponsorBlockLists["Gold"]}/>
-                <SponsorBlock tier="SILVER" imgList={SponsorBlockLists["Silver"]}/>
-                <SponsorBlock tier="BRONZE" imgList={SponsorBlockLists["Bronze"]}/>
+                <SponsorBlock tier="HIVE" imgList={SponsorBlockLists["Hive"]}/>
+                <SponsorBlock tier="QUEEN" imgList={SponsorBlockLists["Queen"]}/>
+                <SponsorBlock tier="WORKER" imgList={SponsorBlockLists["Worker"]}/>
+                <SponsorBlock tier="DRONE" imgList={SponsorBlockLists["Drone"]}/>
             </section>
             <section id="donate">
-                <ContentBlock title= "DONATE" content="pls give us money" buttonText = "Make A Donation" buttonLink={donateLink}></ContentBlock>
+                <ContentBlock title= "DONATE" content="Not a company but interested in supporting our team?" buttonText = "Make A Donation" buttonLink={donateLink}></ContentBlock>
             </section>
         </div>
     );

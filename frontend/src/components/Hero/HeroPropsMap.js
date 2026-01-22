@@ -5,9 +5,15 @@ export const HeroPropsMap = {
         bgImgURL: "/banner_image_temp.png",
         bgHeight: "100svh",
     },
+    "/news": {
+        title: "News",
+        subtitle: "",
+        bgImgURL: "/banner_image_temp.png",
+        bgHeight: "100svh",
+    },
     "/sponsorship": {
         title: "SPONSORSHIP",
-        subtitle: "We would like to extend our thanks to all of our sponsors. Because of your contributions...",
+        subtitle: "",
         bgImgURL: "/banner_image_temp.png",
         bgHeight: "100svh",
     }
