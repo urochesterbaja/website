@@ -59,7 +59,6 @@ function Navbar() {
           <NavLink to="/news" onClick={closeMenu}>News</NavLink>
           <ul className="dropdown-menu">
             <li><NavLink to="/news#newsletters" onClick={closeMenu}>Newsletters</NavLink></li>
-            <li><NavLink to="/news#gallery" onClick={closeMenu}>Gallery</NavLink></li>
           </ul>
         </li>
         

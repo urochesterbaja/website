@@ -1,6 +1,6 @@
 [build]
   base = "frontend"
-  command = "npm run build"
+  command = "echo '{\"clientId\": \"${AUTH0_CLIENT_ID}\", \"domain\": \"${AUTH0_DOMAIN}\"}' > public/auth_config.json && npm run build"
   publish = "dist"
 
 [functions]

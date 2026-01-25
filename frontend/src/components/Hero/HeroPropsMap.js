@@ -9,12 +9,18 @@ export const HeroPropsMap = {
         title: "News",
         subtitle: "",
         bgImgURL: "/banner_image_temp.png",
-        bgHeight: "100svh",
+        bgHeight: "40svh",
     },
     "/sponsorship": {
         title: "SPONSORSHIP",
         subtitle: "",
         bgImgURL: "/banner_image_temp.png",
-        bgHeight: "100svh",
+        bgHeight: "40svh",
+    },
+    "/results": {
+        title: "RESULTS",
+        subtitle: "",
+        bgImgURL: "/banner_image_temp.png",
+        bgHeight: "40svh",
     }
 }

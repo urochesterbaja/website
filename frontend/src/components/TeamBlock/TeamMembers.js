@@ -41,13 +41,7 @@ export const TeamMembers = {
             major: "Mechanical Engineering",
             year: "3rd",
         },
-        {
-            name : "my buddy alex",
-            position : "he's just my friend idk",
-            role: "Transmission",
-            major: "Mechanical Engineering",
-            year: "3rd",
-        }
+
     ],
     "Subsystem Leads" : [
         {

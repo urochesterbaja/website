@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import Home from "./pages/Home";
 import News from "./pages/News"
 import Sponsorship from "./pages/Sponsorship"
+import Results from "./pages/Results"
 import Navbar from "./components/Navbar/Nav"
 import Hero from "./components/Hero/Hero"
 import Footer from "./components/Footer/Footer"
@@ -21,6 +22,7 @@ function Layout() {
         <Route path="/" element={<Home/>} />
         <Route path="/news" element={<News/>} />
         <Route path="/sponsorship" element={<Sponsorship/>} />
+        <Route path="/results" element={<Results/>} />
       </Routes>
       <Footer/>
     </>

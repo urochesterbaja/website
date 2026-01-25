@@ -9,7 +9,7 @@ function TeamBlock({ name, memberList }) {
     return(
         <>
             <div className="team-block">
-                    <h2>{name}</h2>
+                    <h3>{name}</h3>
                     <div className="team-member-container">
                         {memberList.map((item, index) => (
                             <div key={index} className="team-member" onClick={() => setSelectedMember(item)}>

@@ -1,5 +1,5 @@
 .news-block {
-    width: 90%;               
+    width: 70%;               
     margin: 3rem auto;        
 
     padding: 2rem 2rem;
@@ -17,7 +17,7 @@
 
 .news-container {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     width: 100%;
     gap: 2rem;
     font-size: 120%
@@ -45,4 +45,18 @@
 .news-button:hover {
     opacity: 0.9;
     color:white;
+}
+
+@media (max-width: 1200px) {
+    .news-container {
+        grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (max-width: 768px) {
+    .news-container {
+        grid-template-columns: repeat(1, 1fr);
+
+    }
 }
