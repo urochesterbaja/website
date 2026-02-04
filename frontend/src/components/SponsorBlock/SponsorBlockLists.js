@@ -1,4 +1,14 @@
 export const SponsorBlockLists = {
+    "Blurb" : {
+        "title" : "We Value Our Sponsors!",
+        "content" : "Our team could not operate without the generous support of our local and global sponsors. We greatly appreciate all the help we have received."
+    },
+    "DonateBlock" : {
+        "title" : "DONATE",
+        "content" : "Not a company but interested in supporting our team?",
+        "buttonText" : "Make A Donation",
+        "buttonLink" : "https://securelb.imodules.com/s/1676/giving4/giving4.aspx?sid=1676&gid=2&pgid=824&cid=1657&appealcode=18C3L&bledit=1&dids=419",
+    },
     "Hive" : [
         {
             name : "Gene Haas Foundation",

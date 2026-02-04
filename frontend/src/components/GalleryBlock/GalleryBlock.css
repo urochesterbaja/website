@@ -1,0 +1,131 @@
+.gallery-block {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    align-items: center;
+    padding: 30px;
+    margin: 3rem auto;
+    background-color: white;
+    border-top: 16px solid #021BC3;
+    border-radius: 16px;
+    color: #001E5F;
+    width: 70%;
+}
+
+.gallery-row{
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%
+}
+
+.gallery-h2{
+    font-size: 3rem;
+    margin-top: 0rem;
+    margin-bottom: .1rem;
+    padding: 0rem;
+}
+
+.gallery {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.viewport {
+  width: 600px;
+  height: 400px;
+  overflow: hidden; /* hides other images */
+}
+
+.track {
+  display: flex;
+  transition: transform 0.4s ease-in-out; /* smooth slide */
+}
+
+.track img {
+  width: 600px;
+  height: auto;
+  object-fit: cover;
+  flex-shrink: 0; /* prevents images from shrinking */
+}
+
+.button-left {
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    color:black;
+    right: 50px;
+}
+
+
+.button-right {
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    background: transparent;
+    color:black;
+    left: 50px;
+}
+
+.button-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.big-button {
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
+  padding-top: .75rem;
+  padding-bottom: .75rem;
+  border: 1px solid #ccc;
+  border-radius: 16px 16px 16px 16px;    
+  background-color: rgb(6, 6, 6);
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.big-button:hover {
+  background-color: #00308f;
+  color: white;
+}
+
+@media (max-width: 1040px) {
+    .track img {
+        width: 300px;
+        height: auto;
+        object-fit: cover;
+        flex-shrink: 0; /* prevents images from shrinking */
+    }
+    .viewport {
+        width: 300px;
+        height: 200px;
+        overflow: hidden; /* hides other images */
+    }
+
+    .gallery-block {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .track img {
+        width: 200px;
+        height: auto;
+        object-fit: cover;
+        flex-shrink: 0; /* prevents images from shrinking */
+    }
+    .viewport {
+        width: 200px;
+        height: 134px;
+        overflow: hidden; /* hides other images */
+    }
+
+}

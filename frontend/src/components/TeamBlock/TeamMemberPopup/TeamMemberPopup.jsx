@@ -2,6 +2,9 @@ import "./TeamMemberPopup.css"
 
 import { useEffect, useState } from "react"
 
+import { FaLinkedin } from "react-icons/fa";
+
+
 function TeamMemberPopup({selectedMember, onClose}){
     const [visible, setVisible] = useState(false)
 
@@ -11,6 +14,7 @@ function TeamMemberPopup({selectedMember, onClose}){
 
     const role = selectedMember.role ? <h4>Role: {selectedMember.role}</h4> : null;
     const year = selectedMember.year ? <h4>This is {selectedMember.name}'s {selectedMember.year} year on Baja</h4> : null;
+    const linkedin = selectedMember.linkedin ? <a class="linkedin" href={selectedMember.linkedin} target="_blank" rel="noreferrer"><FaLinkedin /></a> : null
     return(
         <div className={`popup-overlay ${visible ? "show" : ""}`} onClick={onClose}>
             <div className={`popup-content ${visible ? "show" : ""}`} onClick={(e) => e.stopPropagation()}>
@@ -18,7 +22,8 @@ function TeamMemberPopup({selectedMember, onClose}){
                 <h2>{selectedMember.name}</h2>
                 <h4>{selectedMember.position}</h4>
                 {role}
-                {year}
+                {year}          
+                {linkedin}              
             </div>
         </div>
     );

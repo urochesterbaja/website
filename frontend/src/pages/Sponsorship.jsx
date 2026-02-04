@@ -8,9 +8,10 @@ import { SponsorBlockLists } from "../components/SponsorBlock/SponsorBlockLists"
 
 
 export default function Sponsorship() {
-    const donateLink = "https://securelb.imodules.com/s/1676/giving4/giving4.aspx?sid=1676&gid=2&pgid=824&cid=1657&appealcode=18C3L&bledit=1&dids=419"
     const { hash, pathname } = useLocation();
 
+    //this bit is copied into most of the pages, it handles the smooth scrolling when you select a dropdown in the navbar
+    //it's also why the pages are divided into <section> tags, so the sections are clearly laid out
     useEffect(() => {
     if (hash) {
         const el = document.querySelector(hash);
@@ -23,8 +24,7 @@ export default function Sponsorship() {
 
     return (
         <div className="page-container">
-            <ContentBlock title = "We value our sponsors!" content="Our team could not operate without the generous support of our local and global sponsors. We greatly appreciate all the help we have received.
-"/>
+            <ContentBlock title={SponsorBlockLists["Blurb"].title} content={SponsorBlockLists["Blurb"].content}/>
             <section id="sponsors">
                 <SponsorBlock tier="HIVE" imgList={SponsorBlockLists["Hive"]}/>
                 <SponsorBlock tier="QUEEN" imgList={SponsorBlockLists["Queen"]}/>
@@ -32,7 +32,12 @@ export default function Sponsorship() {
                 <SponsorBlock tier="DRONE" imgList={SponsorBlockLists["Drone"]}/>
             </section>
             <section id="donate">
-                <ContentBlock title= "DONATE" content="Not a company but interested in supporting our team?" buttonText = "Make A Donation" buttonLink={donateLink}></ContentBlock>
+                <ContentBlock 
+                    title={SponsorBlockLists["DonateBlock"].title} 
+                    content={SponsorBlockLists["DonateBlock"].content} 
+                    buttonText={SponsorBlockLists["DonateBlock"].buttonText} 
+                    buttonLink={SponsorBlockLists["DonateBlock"].buttonLink}>
+                </ContentBlock>
             </section>
         </div>
     );

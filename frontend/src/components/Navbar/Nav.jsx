@@ -8,6 +8,8 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
+      // the X in "window.scrollY > X" is the value that sets when the navbar collapses
+      // higher value --> more scrolling before navbar collapses
       setScrolled(window.scrollY > 260);
     };
 
@@ -15,7 +17,7 @@ function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  {/*mobile menu stuff*/}
+  {/* this bit sets up the mobile menu when you press the hamburger */}
   const [menuOpen, setMenuOpen] = useState(false);
   const closeMenu = () => setMenuOpen(false);
 
@@ -36,6 +38,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <h1 className="logo">
         <NavLink to="/" end onClick={closeMenu}>
+          <img src="/Logotrans.png"></img>
           <i>YELLOWJACKET RACING</i>
         </NavLink>
       </h1>
@@ -46,7 +49,7 @@ function Navbar() {
       </button>
 
       <ul className={`nav-links ${menuOpen ? "open" : ""}`}>
-        {/* The dropdown links are nested in a dropdown class with a NavLink being the "main" button and a dropdown menu for the extras */}
+        {/* The dropdown links are nested in a dropdown class with a NavLink being the "main" button and a unordered list with dropdown menu class for the extras */}
         <li className="dropdown">
           <NavLink to="/" onClick={closeMenu}>About</NavLink>
           <ul className="dropdown-menu">
@@ -59,6 +62,7 @@ function Navbar() {
           <NavLink to="/news" onClick={closeMenu}>News</NavLink>
           <ul className="dropdown-menu">
             <li><NavLink to="/news#newsletters" onClick={closeMenu}>Newsletters</NavLink></li>
+            <li><NavLink to="./news#gallery" onLick={closeMenu}>Gallery</NavLink></li>
           </ul>
         </li>
         

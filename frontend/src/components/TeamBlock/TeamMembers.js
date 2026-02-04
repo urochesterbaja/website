@@ -7,6 +7,7 @@ export const TeamMembers = {
             role: "Transmission",
             major: "Mechanical Engineering",
             year: "3rd",
+            linkedin: "https://www.linkedin.com/in/w-hager/",
 
         },
         {

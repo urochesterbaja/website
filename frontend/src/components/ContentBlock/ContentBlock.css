@@ -76,6 +76,12 @@ img {
     margin-bottom: .1rem;
 }
 
+.text-container-flipped h2 {
+    font-size: 2rem;
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+}
+
 .text-centered h2,
 .text-centered p {
    text-align: center;
@@ -119,8 +125,8 @@ img {
     .text-container, .text-container-flipped {
         padding: .1rem;
         line-height: 1.6rem;
+        text-align: center
     }
-
     .content-block {
         width: 90%;
     }

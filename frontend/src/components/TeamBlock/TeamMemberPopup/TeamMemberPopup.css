@@ -51,6 +51,16 @@
   margin-bottom: 1rem;
 }
 
+.popup-content h4 {
+  margin-top: .4rem;
+  margin-bottom: .4rem;
+}
+
+.linkedin {
+    color: #0077B5;
+    font-size: 2rem;
+}
+
 @media(max-width:768px){
     .popup-overlay.show{
         background: rgba(0, 0, 0, 0)

@@ -19,7 +19,7 @@
 
 .team-member-container {
     display: grid;
-    width: 80%;
+    width: 88%;
     grid-template-columns: repeat(auto-fit, 120px);
     justify-content: center;
     gap: 3rem;
@@ -39,6 +39,7 @@
 .team-member-image {
     border-radius: 100%;
 }
+
 
 @media (max-width: 768px) {
     .team-block{

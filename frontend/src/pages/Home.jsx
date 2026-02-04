@@ -5,10 +5,14 @@ import "./Home.css"
 import ContentBlock from "../components/ContentBlock/ContentBlock.jsx"
 import TeamBlock from "../components/TeamBlock/TeamBlock.jsx"
 import { TeamMembers } from "../components/TeamBlock/TeamMembers"
+import { Subsystems } from "../components/Subsystems.js"
+import { AboutInfo } from "../components/AboutInfo.js"
 
 export default function Home() {
     const { hash, pathname } = useLocation();
 
+    //this bit is copied into most of the pages, it handles the smooth scrolling when you select a dropdown in the navbar
+    //it's also why the pages are divided into <section> tags, so the sections are clearly laid out
     useEffect(() => {
     if (hash) {
         const el = document.querySelector(hash);
@@ -21,28 +25,29 @@ export default function Home() {
 
     return (
         <div className="page-container">
-            <ContentBlock 
-                title="Who We Are" 
-                content="Yellowjacket Racing UR Baja SAE is a student-run, non-profit organization which designs, fabricates, tests, and competes with a single-seater off-road vehicle. From engineering and applied science to business and marketing, our team welcomes anyone who is interested in hands-on STEM experience!" 
-                content2="Whether you have built a car from scratch or have never touched a wrench in your life, we will utilize any of your experience and will teach you designing, manufacturing, and testing methods."
-            />
-            <ContentBlock title="What We Do" 
-                content="blurb two" 
-                />
+            {Object.values(AboutInfo).map((item, index)  => (
+                <ContentBlock key={index} title={item.title} content={item.content} content2={item.content2} imgURL={item.img} flip={item.flip}/>              
+            ))}
 
             <section id="our-team">
                 <div className = "light-background">
+                    <br></br>
                     <h1>Our Team</h1>
-                    <TeamBlock name="Executive Board" memberList={TeamMembers["Executive Board"]}></TeamBlock>
-                    <TeamBlock name="Subsystem Leads" memberList={TeamMembers["Subsystem Leads"]}></TeamBlock>
-                    <TeamBlock name="Project Team Leads" memberList={TeamMembers["Project Team Leads"]}></TeamBlock>
+                    {/* Use object.entries so the groupname can be accessed too*/}
+                    {Object.entries(TeamMembers).map(([groupName, members], index) => (
+                            <TeamBlock key={groupName} name={groupName} memberList={members} />
+                    ))}
+                <br></br>
                 </div>
             </section>
 
             <section id="subsystems">
+                <br></br>
                 <h1>Subsystems</h1>
-                <ContentBlock title = "name" content="blurb" imgURL="/banner_image_temp.png"/>
-                <ContentBlock title = "name" content="blurb" imgURL="/banner_image_temp.png" flip="true"/>
+                {Object.values(Subsystems).map((item, index)  => (
+                    <ContentBlock key={index} title={item.title} content={item.content} content2={item.content2} imgURL={item.img} flip={item.flip}/>
+                ))}
+                <br></br>
             </section>
         </div>
     );

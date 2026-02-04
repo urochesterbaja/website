@@ -50,7 +50,9 @@
 @media (max-width: 1200px) {
     .news-container {
         grid-template-columns: repeat(2, 1fr);
-
+    }
+    .news-block {
+        width: 90%;
     }
 }
 
