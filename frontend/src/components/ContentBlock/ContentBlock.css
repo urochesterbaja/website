@@ -8,15 +8,15 @@
     padding: 30px;
     margin: 3rem auto;
     background-color: white;
-    border-top: 16px solid #021BC3;
+    border-top: 16px solid var(--meliora-blue);
     border-radius: 16px;
-    color: #001E5F;
+    color: var(--ur-navy);
     width: 70%;
 }
 
 .content-block.dark-scheme{
     color: white;
-    border-top: 16px solid #021BC3;
+    border-top: 16px solid var(--meliora-blue);
     background-color: #242424;
 }
 
@@ -101,16 +101,15 @@ img {
   padding-bottom: .75rem;
   border: 1px solid #ccc;
   border-radius: 16px 16px 16px 16px;    
-  background-color: rgb(6, 6, 6);
+  background-color: var(--ur-navy);
   color: white;
   font-size: 1.5rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .big-button:hover {
-  background-color: #00308f;
-  color: white;
+  background-color: var(--meliora-blue);
 }
 
 @media(max-width:768px) {

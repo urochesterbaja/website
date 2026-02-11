@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react"
+import { PartnerBlockLists }  from "../deprecated-dbs/PartnerBlockLists"
 import "./Nav.css";
 
 function Navbar() {
@@ -71,12 +72,14 @@ function Navbar() {
         <li className="dropdown">
           <NavLink to="/sponsorship" onClick={closeMenu}>Sponsorship</NavLink>
           <ul className="dropdown-menu">
-            <li><NavLink to="/sponsorship#sponsors" onClick={closeMenu}>Sponsors</NavLink></li>
+            <li><NavLink to="/sponsorship#partners" onClick={closeMenu}>Sponsors</NavLink></li>
             <li><NavLink to="/sponsorship#donate" onClick={closeMenu}>Donate</NavLink></li>
             </ul>
           </li>
 
         <li className="dropdown"><NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink></li>
+
+        <li className="dropdown"><a id="donate-button" href={PartnerBlockLists["DonateBlock"].buttonLink} target="_blank" rel="noopener noreferrer"><i>Donate</i></a></li>
       </ul>
     </nav>
   );

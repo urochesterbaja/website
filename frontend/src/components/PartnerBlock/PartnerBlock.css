@@ -1,4 +1,4 @@
-.sponsor-block {
+.partner-block {
     width: 70%;               
     margin: 3rem auto;        
 
@@ -8,15 +8,15 @@
     flex-direction: column;
     align-items: center;
 
-    border-top: 16px solid #021BC3;
+    border-top: 16px solid var(--meliora-blue);
     border-radius: 16px;
     background-color: white;
 
-    color: #001E5F;
+    color: var(--ur-navy);
 
 }
 
-.sponsor-heading {
+.partner-heading {
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
@@ -47,21 +47,21 @@
 }
 
 .img-container a:hover img {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 .logo-replacement {
-    color: #001E5F;
-    transition: transform 0.2s ease;
+    color: var(--ur-navy);
+    transition: transform 0.3s ease;
     font-size: 1rem;
 }
 
 .logo-replacement:hover {
-    transform: scale(1.05);
+    transform: scale(1.1);
 }
 
 @media (max-width: 768px) {
-    .sponsor-block {
+    .partner-block {
         padding: 2.5rem 1.5rem;
     }
 
@@ -71,7 +71,7 @@
 }
 
 @media (max-width: 480px) {
-    .sponsor-block {
+    .partner-block {
         width: 90%;
         padding: 2rem 1rem;
     }

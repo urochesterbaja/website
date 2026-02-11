@@ -1,6 +1,7 @@
 export const TeamMembers = {
     "Executive Board" : [
         {
+            group: "Executive Board",
             name : "john",
             position : "fella",
             img: "/team_member_pics/profile-pic-default.png",
@@ -11,6 +12,7 @@ export const TeamMembers = {
 
         },
         {
+            group: "Executive Board",
             name : "joan",
             position : "gal",
             img: "/team_member_pics/profile-pic-default.png",
@@ -19,6 +21,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group: "Executive Board",
             name : "freddy",
             position : "director of balling",
             img: "/team_member_pics/profile-pic-default.png",
@@ -27,6 +30,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group: "Executive Board",
             name : "zofka",
             position : "ceo of just chillin",
             img: "/team_member_pics/profile-pic-default.png",
@@ -35,6 +39,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group: "Executive Board",
             name : "leopold",
             position : "steering wheel designer",
             img: "/team_member_pics/profile-pic-default.png",
@@ -46,6 +51,7 @@ export const TeamMembers = {
     ],
     "Subsystem Leads" : [
         {
+            group : "Subsystem Leads",
             name : "john",
             position : "fella",
             img: "/team_member_pics/profile-pic-default.png",
@@ -54,6 +60,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Subsystem Leads",
             name : "joan",
             position : "gal",
             img: "/team_member_pics/profile-pic-default.png",
@@ -62,6 +69,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Subsystem Leads",
             name : "freddy",
             position : "director of balling",
             img: "/team_member_pics/profile-pic-default.png",
@@ -70,6 +78,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Subsystem Leads",
             name : "zofka",
             position : "ceo of just chillin",
             img: "/team_member_pics/profile-pic-default.png",
@@ -78,6 +87,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Subsystem Leads",
             name : "leopold",
             position : "steering wheel designer",
             img: "/team_member_pics/profile-pic-default.png",
@@ -88,6 +98,7 @@ export const TeamMembers = {
     ],
     "Project Team Leads" : [
         {
+            group : "Project Team Leads",
             name : "john",
             position : "fella",
             img: "/team_member_pics/profile-pic-default.png",
@@ -96,6 +107,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Project Team Leads",
             name : "joan",
             position : "gal",
             img: "/team_member_pics/profile-pic-default.png",
@@ -104,6 +116,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Project Team Leads",
             name : "freddy",
             position : "director of balling",
             img: "/team_member_pics/profile-pic-default.png",
@@ -112,6 +125,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Project Team Leads",
             name : "zofka",
             position : "ceo of just chillin",
             img: "/team_member_pics/profile-pic-default.png",
@@ -120,6 +134,7 @@ export const TeamMembers = {
             year: "3rd",
         },
         {
+            group : "Project Team Leads",
             name : "leopold",
             position : "steering wheel designer",
             img: "/team_member_pics/profile-pic-default.png",

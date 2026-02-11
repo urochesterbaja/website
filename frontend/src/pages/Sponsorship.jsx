@@ -1,14 +1,14 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import "./Sponsorship.css";
-import SponsorBlock from "../components/SponsorBlock/SponsorBlock";
+import PartnerBlock from "../components/PartnerBlock/PartnerBlock";
 import ContentBlock from "../components/ContentBlock/ContentBlock"
-import { SponsorBlockLists } from "../components/SponsorBlock/SponsorBlockLists"
 
 
 export default function Sponsorship() {
     const { hash, pathname } = useLocation();
+    const [partnerPageContent, setPartnerPageContent] = useState(null);
+    const [partners, setPartners] = useState([])
 
     //this bit is copied into most of the pages, it handles the smooth scrolling when you select a dropdown in the navbar
     //it's also why the pages are divided into <section> tags, so the sections are clearly laid out
@@ -22,22 +22,45 @@ export default function Sponsorship() {
     }
     }, [hash, pathname]);
 
+    useEffect(() => {
+        fetch("/.netlify/functions/getPartnerPageContent")
+            .then(res => res.json())
+            .then(data => setPartnerPageContent(data))
+            .catch(err => console.error("Failed to fetch partnerPageContent", err));
+    }, []);
+
+    useEffect(() => {
+        fetch("/.netlify/functions/getPartners")
+            .then(res => res.json())
+            .then(data => setPartners(data))
+            .catch(err => console.error("Failed to fetch partners", err));
+    }, []);
+
+    const partnersByTier = partners.reduce((acc, partner) => {
+        if (!acc[partner.tier]) acc[partner.tier] = [];
+        acc[partner.tier].push(partner);
+        return acc;
+    }, {});
+
     return (
         <div className="page-container">
-            <ContentBlock title={SponsorBlockLists["Blurb"].title} content={SponsorBlockLists["Blurb"].content}/>
-            <section id="sponsors">
-                <SponsorBlock tier="HIVE" imgList={SponsorBlockLists["Hive"]}/>
-                <SponsorBlock tier="QUEEN" imgList={SponsorBlockLists["Queen"]}/>
-                <SponsorBlock tier="WORKER" imgList={SponsorBlockLists["Worker"]}/>
-                <SponsorBlock tier="DRONE" imgList={SponsorBlockLists["Drone"]}/>
+            {partnerPageContent && <ContentBlock title={partnerPageContent.blurb.title} content={partnerPageContent.blurb.content}/>}
+            <section id="partners">
+                {Object.entries(partnersByTier).map(([tier, imgList]) => (
+                    <PartnerBlock
+                        key={tier}
+                        tier={tier.toUpperCase()} 
+                        imgList={imgList}  
+                    />
+                ))}
             </section>
             <section id="donate">
-                <ContentBlock 
-                    title={SponsorBlockLists["DonateBlock"].title} 
-                    content={SponsorBlockLists["DonateBlock"].content} 
-                    buttonText={SponsorBlockLists["DonateBlock"].buttonText} 
-                    buttonLink={SponsorBlockLists["DonateBlock"].buttonLink}>
-                </ContentBlock>
+                {partnerPageContent && <ContentBlock 
+                    title={partnerPageContent.donateBlock.title} 
+                    content={partnerPageContent.donateBlock.content} 
+                    buttonText={partnerPageContent.donateBlock.buttonText} 
+                    buttonLink={partnerPageContent.donateBlock.buttonLink}>
+                </ContentBlock> }
             </section>
         </div>
     );

@@ -9,12 +9,12 @@ function TeamBlock({ name, memberList }) {
     return(
         <>
             <div className="team-block">
-                    <h3>{name}</h3>
+                    <h2>{name}</h2>
                     <div className="team-member-container">
                         {memberList.map((item, index) => (
                             <div key={index} className="team-member" onClick={() => setSelectedMember(item)}>
                                 <img className="team-member-image" src={item.img ? item.img : "/team_member_pics/profile-pic-default.png"}></img>
-                                <p>{item.name}</p>
+                                <p><b>{item.name}</b></p>
                                 <p>{item.position}</p>
                             </div>
                         ))}

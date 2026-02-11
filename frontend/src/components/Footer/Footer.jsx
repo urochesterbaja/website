@@ -1,12 +1,10 @@
 import "./Footer.css";
-import { FaFacebook } from "react-icons/fa";
 import { FaInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
-import { FaLinkedin } from "react-icons/fa";
 
-import {useState} from "react"
+import { useState, useEffect } from "react"
 
-function Footer( {FooterInfo} ) {
+function Footer( { footerInfo }) {
     const [email, setEmail] = useState("");   //user email
     const [status, setStatus] = useState(""); //success/error message
 
@@ -43,12 +41,10 @@ function Footer( {FooterInfo} ) {
             <div className="footer-content">
                 <div className= "raised-box">
                     <h2>University of Rochester Baja Racing</h2>
-                    <p>General Inquiries: {FooterInfo["Email"]}</p>
+                    <p>General Inquiries: {footerInfo["email"]}</p>
                     <div className="icon-row">
-                        <a id="facebook" href="https://www.facebook.com/rochesterbaja/" target="_blank" rel="noreferrer"><FaFacebook /></a>
-                        <a id ="instagram" href="https://www.instagram.com/ur_bajasae/" target="_blank" rel="noreferrer"><FaInstagram /></a>
-                        <a id="youtube" href="https://www.youtube.com/channel/UCdGcGZGMqcPICAijvLqaBOQ" target="_blank" rel="noreferrer"><FaYoutube /></a>
-                        <a id="linkedin" href="https://www.linkedin.com/groups/4268521/" target="_blank" rel="noreferrer"><FaLinkedin /></a>
+                        <a id ="instagram" href={footerInfo["instagram"]} target="_blank" rel="noreferrer"><FaInstagram /></a>
+                        <a id="youtube" href={footerInfo["youtube"]} target="_blank" rel="noreferrer"><FaYoutube /></a>
                     </div>
                 </div>
                 <div className= "main-text">

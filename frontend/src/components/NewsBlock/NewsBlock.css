@@ -8,11 +8,11 @@
     flex-direction: column;
     align-items: center;
 
-    border-top: 16px solid #021BC3;
+    border-top: 16px solid var(--meliora-blue);
     border-radius: 16px;
     background-color: white;
 
-    color: #001E5F;
+    color: var(--ur-navy);
 }
 
 .news-container {
@@ -26,24 +26,24 @@
 .news-article{
     text-align: center;
     padding: 1rem;
-    border: .1rem solid #001E5F;
+    border: .1rem solid var(--ur-navy);
     border-radius: 16px;
     max-width: 20rem;
 }
 
 .news-button{
-    background-color: #001E5F;
+    background-color: var(--ur-navy);
     color: white;
     border: none;
     padding: .5rem 1rem;
     font-size: 1.2rem;
     cursor: pointer;
     border-radius: 6px;
-    transition: opacity 0.2s ease;
+    transition: background-color 0.2s ease;
 }
 
 .news-button:hover {
-    opacity: 0.9;
+    background-color: var(--meliora-blue);
     color:white;
 }
 

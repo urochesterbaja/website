@@ -4,7 +4,7 @@
     justify-content: space-between;
     align-items: flex-end;
     padding: 40px;
-    background-color: #001E5F;
+    background-color: var(--ur-navy);
     color: whitesmoke;
     margin-top: 0;
 }
@@ -19,13 +19,13 @@
 
 .raised-box {
     position: relative;
-    top: -4rem;
+    /*top: -4rem;*/
     background-color: whitesmoke;
-    color: #001E5F;
+    color: var(--ur-navy);
     padding: 1.5rem;
     padding-top: .3rem;
     border-radius: 12px;
-    border-top: 1rem solid #021BC3;
+    border-top: 1rem solid var(--meliora-blue);
     width: 30rem;
     box-shadow: 0 10px 30px rgba(0,0,0,0.4);
     flex-shrink: 0;
@@ -38,7 +38,7 @@
 
 .icon-row a {
     margin-right: 12px;
-    color: #001E5F;
+    color: var(--ur-navy);
     font-size: 24px;
     transition: scale 0.3s;
 }
@@ -94,7 +94,7 @@
   padding: 0.75rem 1.25rem;
   border: 1px solid #ccc;
   border-radius: 0 6px 6px 0;    
-  background-color: rgb(4, 4, 4);
+  background-color: var(--meliora-blue);
   color: white;
   font-size: 1rem;
   cursor: pointer;
@@ -102,7 +102,7 @@
 }
 
 .subscribe-form button:hover {
-  background-color: #00308f;
+  background-color: var(--ur-navy);
 }
 
 @media (max-width: 1200px) {

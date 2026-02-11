@@ -1,9 +1,9 @@
-import "./SponsorBlock.css"
+import "./PartnerBlock.css"
 
-function SponsorBlock ({tier, imgList}) {
+function PartnerBlock ({tier, imgList = []}) {
     return (
-        <div className="sponsor-block">
-            <h2 className="sponsor-heading"><i>{tier} SPONSORS</i></h2>
+        <div className="partner-block">
+            <h2 className="partner-heading"><i>{tier} SPONSORS</i></h2>
             <div className="img-container">
                 {imgList.map((item, index) => {
                     const imageElement = item.img ? <img src={item.img}></img> : <h2 className="logo-replacement">{item.name}</h2>
@@ -18,4 +18,4 @@ function SponsorBlock ({tier, imgList}) {
     );
 };
 
-export default SponsorBlock;
+export default PartnerBlock;

@@ -5,16 +5,16 @@
     padding: 1rem 1rem;
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: center;
 
     gap: 1rem;
 
-    border-top: 16px solid #021BC3;
+    border-top: 16px solid var(--meliora-blue);
     border-radius: 16px;
     background-color: white;
 
-    color: #001E5F;
+    color: var(--ur-navy);
 }
 
 .team-member-container {
@@ -27,13 +27,14 @@
 
 .team-member {
     transition: scale 0.2s ease;
+    cursor: pointer;
     /* padding: 1rem;
-    border: .1rem solid #001E5F;
+    border: .1rem solid var(--ur-navy;
     border-radius: 16px; */
 }
 
 .team-member:hover {
-    scale: 105%
+    scale: 106%
 }
 
 .team-member-image {
@@ -44,5 +45,10 @@
 @media (max-width: 768px) {
     .team-block{
         flex-direction: column;
+        width: 90%;
+    }
+
+    .team-member-container {
+        gap: 1.5rem;
     }
 }

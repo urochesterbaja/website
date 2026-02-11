@@ -1,7 +1,7 @@
 import "./Hero.css";
 import { useState, useEffect } from "react";
 
-function Hero({title, subtitle, bgImgURL, bgHeight}) {
+function Hero({ heroInfo }) {  
   const [fadeIn, setfadeIn] = useState(false)
 
   //this bit sets the "fade" for when a page changes
@@ -9,14 +9,18 @@ function Hero({title, subtitle, bgImgURL, bgHeight}) {
     setfadeIn(false);
     const timer = setTimeout(() => setfadeIn(true), 10);
     return() => clearTimeout(timer);
-  }, []);
+  }, [heroInfo]);
+
+  if (!heroInfo) {
+      return <div className="hero-loading" />;
+  }
 
   return (
-    <section className="hero" style={{ backgroundImage: `url(${bgImgURL})`, height: bgHeight}}>
+    <section className="hero" style={{ backgroundImage: `url(${heroInfo.bgImgURL})`, height: heroInfo["bgHeight"]}}>
         <div className="hero-overlay">  {/* "dims" the image for readability */}
             <div className={`hero-content ${fadeIn ? "fade-in" : ""}`}>
-                <h1><i>{ title }</i></h1>
-                <p>{ subtitle }</p>
+                <h1><i>{ heroInfo["title"] }</i></h1>
+                <p>{ heroInfo["subtitle"] }</p>
                 {/* <button className="hero-button">Find out more!</button> */}
                 </div>
         </div>

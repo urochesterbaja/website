@@ -1,32 +1,47 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 import NewsBlock from "../components/NewsBlock/NewsBlock";
-import { NewsArticles } from "../components/NewsBlock/NewsArticles";
 import GalleryBlock from "../components/GalleryBlock/GalleryBlock";
-import { PhotoGallery } from "../components/GalleryBlock/PhotoGallery.js"
 
 function News () {
+    const [photoGallery, setPhotoGallery] = useState([]);
+    const [newsArticles, setNewsArticles] = useState([]);
     const { hash, pathname } = useLocation();
     
-        //this bit is copied into most of the pages, it handles the smooth scrolling when you select a dropdown in the navbar
-        //it's also why the pages are divided into <section> tags, so the sections are clearly laid out
-        useEffect(() => {
-        if (hash) {
-            const el = document.querySelector(hash);
-            el?.scrollIntoView({ behavior: "smooth" });
-        }
-        else {
-            window.scrollTo({top : 0, behavior: "smooth"});
-        }
-        }, [hash, pathname]);
+    //this bit is copied into most of the pages, it handles the smooth scrolling when you select a dropdown in the navbar
+    //it's also why the pages are divided into <section> tags, so the sections are clearly laid out
+    useEffect(() => {
+    if (hash) {
+        const el = document.querySelector(hash);
+        el?.scrollIntoView({ behavior: "smooth" });
+    }
+    else {
+        window.scrollTo({top : 0, behavior: "smooth"});
+    }
+    }, [hash, pathname]);
+
+    useEffect(() => {
+        fetch("/.netlify/functions/getPhotoGallery")
+            .then(res => res.json())
+            .then(data => setPhotoGallery(data))
+            .catch(err => console.error("Failed to fetch photoGallery", err));
+    }, []);
+
+    useEffect(() => {
+        fetch("/.netlify/functions/getNewsArticles")
+            .then(res => res.json())
+            .then(data => setNewsArticles(data))
+            .catch(err => console.error("Failed to fetch newsArticles", err));
+    }, []);
+    
 
     return (
         <>
         <section id="newsletters">
-            <NewsBlock newsArticles={ NewsArticles.articles }></NewsBlock>
+            <NewsBlock newsArticles={ newsArticles }></NewsBlock>
         </section>
         <section id="gallery">
-            {Object.values(PhotoGallery).map((item, index) => (
+            {photoGallery.map((item, index) => (
             <GalleryBlock key={index} gallery={item} />
             ))}
         </section>
