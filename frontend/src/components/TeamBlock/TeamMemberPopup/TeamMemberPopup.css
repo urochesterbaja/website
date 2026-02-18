@@ -1,3 +1,13 @@
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  body.no-scroll {
+    overflow: auto;
+  }
+}
+
 .popup-overlay {
   position: fixed;
   top: 0;
@@ -35,14 +45,16 @@
     opacity: 1;
 }
 
+
 .popup-close {
   position: absolute;
-  top: 10px;
-  right: 12px;
+  top: 12px;
+  right: 14px;
   background: none;
   border: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   cursor: pointer;
+  color: var(--ur-navy);
 }
 
 .popup-image {

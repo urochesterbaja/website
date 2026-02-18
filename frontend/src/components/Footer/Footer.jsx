@@ -36,6 +36,10 @@ function Footer( { footerInfo }) {
         }
     };
 
+    if (!footerInfo) {
+      return <div className="footer-loading" />;
+  }
+
     return(
         <footer className="footer">
             <div className="footer-content">

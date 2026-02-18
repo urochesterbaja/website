@@ -13,7 +13,7 @@
       "dependencies": [
         "npm:dotenv@^17.2.3",
         "npm:googleapis@171",
-        "npm:mongodb@7",
+        "npm:mongodb@^7.1.0",
         "npm:react-icons@^5.5.0",
         "npm:react-router-dom@^7.11.0"
       ]

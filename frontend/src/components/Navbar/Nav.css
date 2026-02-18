@@ -12,7 +12,7 @@
   margin-right: auto;
   position: fixed;
   backdrop-filter: blur(5px);
-  z-index: 1000;
+  z-index: 9999;
   font-family: rubik;
   transition: background-color 0.2s ease, height 0.2s ease;
 }
@@ -112,8 +112,8 @@
   color: white;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  padding-left: .4rem;
-  padding-right: 0.4rem;
+  padding-left: .45rem;
+  padding-right: 0.45rem;
   padding-top: 0.1rem;
   padding-bottom: 0.1rem;
   font-weight: 450;

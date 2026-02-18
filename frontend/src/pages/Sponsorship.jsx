@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useLoading } from "../LoadingContext"
 
 import PartnerBlock from "../components/PartnerBlock/PartnerBlock";
 import ContentBlock from "../components/ContentBlock/ContentBlock"
 
 
 export default function Sponsorship() {
+    const {startLoading, stopLoading} = useLoading();
     const { hash, pathname } = useLocation();
     const [partnerPageContent, setPartnerPageContent] = useState(null);
     const [partners, setPartners] = useState([])
@@ -23,17 +25,21 @@ export default function Sponsorship() {
     }, [hash, pathname]);
 
     useEffect(() => {
+        startLoading();
         fetch("/.netlify/functions/getPartnerPageContent")
             .then(res => res.json())
             .then(data => setPartnerPageContent(data))
-            .catch(err => console.error("Failed to fetch partnerPageContent", err));
+            .catch(err => console.error("Failed to fetch partnerPageContent", err))
+            .finally(() => stopLoading());
     }, []);
 
     useEffect(() => {
+        startLoading();
         fetch("/.netlify/functions/getPartners")
             .then(res => res.json())
             .then(data => setPartners(data))
-            .catch(err => console.error("Failed to fetch partners", err));
+            .catch(err => console.error("Failed to fetch partners", err))
+            .finally(() => stopLoading());
     }, []);
 
     const partnersByTier = partners.reduce((acc, partner) => {

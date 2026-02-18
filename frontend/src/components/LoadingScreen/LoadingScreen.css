@@ -1,0 +1,49 @@
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  background: #242424;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9996;
+  pointer-events: none;
+
+  /* fade in/out animation */
+  animation: fadeOverlay 1s ease forwards;
+}
+
+/* Image animation */
+.loader-image {
+  width: 200px;
+    /*
+    left: -100px; 
+    animation: slideAcross 1.5s ease forwards;
+    animation-delay: 0.3s; 
+    */
+}
+
+/* Overlay fades in then out */
+@keyframes fadeOverlay {
+  0% {
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  85% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Image slides across screen */
+@keyframes slideAcross {
+  0% {
+    left: -100px;
+  }
+  100% {
+    left: calc(100% + 100px);
+  }
+}

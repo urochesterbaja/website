@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { useLoading } from "../LoadingContext"
 
 import ResultsBlock from "../components/ResultsBlock/ResultsBlock";
 
 function Results () {
+    const {startLoading, stopLoading} = useLoading();
     const { hash, pathname } = useLocation();
     const [resultsList, setResultsList] = useState([]);
 
@@ -20,10 +22,12 @@ function Results () {
     }, [hash, pathname]);
 
     useEffect(() => {
+        startLoading();
         fetch("/.netlify/functions/getResults")
             .then(res => res.json())
             .then(data => setResultsList(data))
-            .catch(err => console.error("Failed to fetch results", err));
+            .catch(err => console.error("Failed to fetch results", err))
+            .finally(stopLoading);
     }, []);
 
     return (
