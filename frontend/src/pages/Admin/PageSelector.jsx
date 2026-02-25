@@ -12,12 +12,12 @@ export default function PageSelector({ token, onSelect }) {
   }, []);
 
   return (
-    <div>
-      <h3>Select Page</h3>
-      <select onChange={e => onSelect(e.target.value)}>
-        <option value="">-- choose page --</option>
+    <div className="page-selector-container">
+      <h3 className="admin-h3">Select Page</h3>
+      <select className="page-selector" onChange={e => onSelect(e.target.value)}>
+        <option className="page-selector-option" value="">-- choose page --</option>
         {pages.map(p => (
-          <option key={p.pageSlug} value={p.pageSlug}>
+          <option className="page-selector-option" key={p.pageSlug} value={p.pageSlug}>
             {p.pageSlug}
           </option>
         ))}

@@ -8,20 +8,20 @@ function ResultsBlock({ results }) {
                 <img src={results.img}></img>
             </div>
             <div className="results-text-container">
-                <h1 className="build-name"><b>{results.build}</b></h1>
+                <h1 className="build-name"><b>{results.buildName}</b></h1>
                 <h3>"{results.nickname}"</h3>
                 {award}
                 <h3 className="no-margin">{results.year} Results:</h3>
                 <div className="comp-results-container">
                     <div className="comp-results-places">
-                        <p>{results.place1}</p>
-                        <p>{results.place2}</p>
-                        <p>{results.place3}</p>
+                        {Object.values(results.results).map((item) => (
+                            <p>{item.place}</p>
+                        ))}
                     </div>
                     <div className="comp-results-locations">
-                        <p>{results.location1}</p>
-                        <p>{results.location2}</p>
-                        <p>{results.location3}</p>
+                        {Object.values(results.results).map((item) => (
+                            <p>{item.location}</p>
+                        ))}
                     </div>
                 </div>
             </div>

@@ -1,0 +1,305 @@
+/* =========================
+   ADMIN ROOT
+========================= */
+
+.admin-page-container {
+  background: var(--ur-navy);
+  color: #ffffff;
+  min-height: 100vh;
+  padding: 40px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.admin-h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.admin-h3 {
+  margin-bottom: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* =========================
+   WORKFLOW LAYOUT
+========================= */
+
+.admin-workflow {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.admin-panel {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 20px;
+  border-radius: 12px;
+  min-width: 260px;
+  flex: 1;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
+}
+
+/* =========================
+   PAGE SELECTOR
+========================= */
+
+.page-selector-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.page-selector {
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.95rem;
+  background: #ffffff;
+  color: #111;
+  cursor: pointer;
+}
+
+/* =========================
+   COMPONENT LIST
+========================= */
+
+.component-list-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.component-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.component-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  gap: 10px;
+}
+
+/* This ensures button + trash sit in ONE row */
+.component-list li > button {
+  flex: 1;
+}
+
+/* Component Select Button */
+.component-list button {
+  background: #ffffff;
+  color: #111;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.component-list button:hover {
+  background: #f0f0f0;
+}
+
+/* Trash Button */
+.component-trash-button-container {
+  display: flex;
+  align-items: center;
+}
+
+.component-list-trash-button {
+  background: #ff4d4d;
+  border: none;
+  color: white;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.component-list-trash-button:hover {
+  background: #cc0000;
+}
+
+/* Add Component Buttons */
+.add-component-button {
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid #ffffff;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
+}
+
+.add-component-button:hover {
+  background: white;
+  color: var(--ur-navy);
+}
+
+/* =========================
+   COMPONENT EDITOR
+========================= */
+
+.component-editor {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.component-editor-container {
+  background: rgba(255, 255, 255, 0.06);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Save Button */
+.component-editor button {
+  align-self: flex-start;
+  padding: 10px 20px;
+  border-radius: 10px;
+  border: none;
+  background: #00c48c;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.component-editor button:hover {
+  background: #00a373;
+}
+
+/* =========================
+   DOCUMENT FIELDS
+========================= */
+
+.component-editor-field,
+.component-editor-row {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.component-editor-field h5,
+.component-editor-row h4 {
+  font-weight: 500;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+/* Inputs */
+.component-editor-field input,
+.component-editor-field textarea {
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: none;
+  font-size: 0.9rem;
+  background: #ffffff;
+  color: #111;
+}
+
+.component-editor-field textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.component-editor-field input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+/* =========================
+   ARRAY DROPDOWN
+========================= */
+
+.array-dropdown {
+  background: rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.array-dropdown-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+}
+
+.array-dropdown-header strong {
+  font-size: 0.9rem;
+}
+
+.array-dropdown-header svg {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.array-dropdown-header svg:hover {
+  color: #ff4d4d;
+}
+
+.array-dropdown-body {
+  margin-top: 10px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.15);
+}
+
+/* Add item button */
+.add-item-btn {
+  margin-top: 10px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px dashed white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  font-size: 0.8rem;
+  transition: 0.2s ease;
+}
+
+.add-item-btn:hover {
+  background: white;
+  color: var(--ur-navy);
+}
+
+/* =========================
+   LIVE PREVIEW
+========================= */
+
+.admin-preview {
+  margin-top: 40px;
+  padding: 25px;
+  background: #242424;
+  color: #111;
+  border-radius: 14px;
+}
+
+.admin-preview h3 {
+  margin-bottom: 20px;
+  font-weight: 600;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+  .admin-workflow {
+    flex-direction: column;
+  }
+}

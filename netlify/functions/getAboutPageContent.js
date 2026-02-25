@@ -9,7 +9,9 @@ exports.handler = async function  (event, context) {
         const db = client.db("siteContent");
 
         const aboutPageContent = await db.collection("aboutPageContent")
-            .findOne({ section: "aboutPage" })
+            .find({})
+            .sort({position: 1})
+            .toArray();
         
         return {
             statusCode: 200,

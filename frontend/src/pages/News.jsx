@@ -44,8 +44,11 @@ function News () {
     return (
         <>
         <section id="newsletters">
-            <NewsBlock newsArticles={ newsArticles }></NewsBlock>
+            {newsArticles.map((item, index) => (
+                <NewsBlock newsArticles={ item }></NewsBlock>
+            ))}
         </section>
+
         <section id="gallery">
             {photoGallery.map((item, index) => (
             <GalleryBlock key={index} gallery={item} />

@@ -1,11 +1,18 @@
 import { NavLink } from "react-router-dom";
 import { useState, useEffect } from "react"
-import { PartnerBlockLists }  from "../deprecated-dbs/PartnerBlockLists"
 import "./Nav.css";
 
 function Navbar() {
   {/*scroll functionality, changes style when scrolling to match background */}
   const [scrolled, setScrolled] = useState(false);
+  const [partnerPageContent, setPartnerPageContent] = useState([]);
+
+  useEffect(() => {
+        fetch("/.netlify/functions/getPartnerPageContent")
+            .then(res => res.json())
+            .then(data => setPartnerPageContent(data))
+            .catch(err => console.error("Failed to fetch partnerPageContent", err))
+    }, []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -79,7 +86,7 @@ function Navbar() {
 
         <li className="dropdown"><NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink></li>
 
-        <li className="dropdown"><a id="donate-button" href={PartnerBlockLists["DonateBlock"].buttonLink} target="_blank" rel="noopener noreferrer"><i>Donate</i></a></li>
+        {partnerPageContent?.[1] && <li className="dropdown"><a id="donate-button" href={partnerPageContent[1].buttonLink} target="_blank" rel="noopener noreferrer"><i>Donate</i></a></li>}
       </ul>
     </nav>
   );

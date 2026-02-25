@@ -3,10 +3,10 @@ import "./NewsBlock.css"
 function NewsBlock ({ newsArticles }) {
     return (
         <div className="news-block">
-            <h1>Newsletters</h1>
-            <p>here i think you wanted to put a blurb containing more info about the team...</p>
+            <h1>{newsArticles.title}</h1>
+            <p>{newsArticles.blurb}</p>
             <div className="news-container">
-                {newsArticles.map((item, index) => (
+                {Object.values(newsArticles.Articles).map((item, index) => (
                     <div key={index} className="news-article">
                         <h2>{item.title}</h2>
                         <p>{item.summary}</p>

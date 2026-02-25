@@ -10,7 +10,7 @@ exports.handler = async function  (event, context) {
 
         const photoGallery = await db.collection("photoGallery")
             .find({})
-            .sort({year: -1})
+            .sort({position: 1})
             .toArray();
         
         return {

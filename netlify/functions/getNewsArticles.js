@@ -10,7 +10,6 @@ exports.handler = async function  (event, context) {
 
         const newsArticles = await db.collection("newsArticles")
             .find({})
-            .sort({year: -1})
             .toArray();
         
         return {

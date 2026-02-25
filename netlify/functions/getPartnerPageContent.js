@@ -9,7 +9,8 @@ exports.handler = async function  (event, context) {
         const db = client.db("siteContent");
 
         const partnerPageContent = await db.collection("partnerPageContent")
-            .findOne({ section: "partnersPage" });
+            .find({})
+            .toArray();
         
         return {
             statusCode: 200,

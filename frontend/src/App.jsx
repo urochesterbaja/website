@@ -8,6 +8,8 @@ import Home from "./pages/Home";
 import News from "./pages/News";
 import Sponsorship from "./pages/Sponsorship";
 import Results from "./pages/Results";
+import Contact from "./pages/Contact";
+
 import Admin from "./pages/Admin/Admin";
 import Navbar from "./components/Navbar/Nav";
 import Hero from "./components/Hero/Hero";
@@ -81,7 +83,7 @@ function Layout() {
   const location = useLocation();
   let pageKey = location.pathname;
 
-  const [footerInfo, setFooterInfo] = useState([]); //FOOTER db pull
+  const [contactInfo, setcontactInfo] = useState(null); //FOOTER db pull
   const [heroInfo, setHeroInfo] = useState([]) // HERO db pull
 
   useEffect(() => {
@@ -92,10 +94,10 @@ function Layout() {
 
   useEffect(() => {
             startLoading();
-            fetch("/.netlify/functions/getFooterInfo")
+            fetch("/.netlify/functions/getContactInfo")
                 .then(res => res.json())
-                .then(data => setFooterInfo(data))
-                .catch(err => console.error("Failed to fetch footer info", err))
+                .then(data => setcontactInfo(data))
+                .catch(err => console.error("Failed to fetch contactInfo", err))
                 .finally(() => stopLoading());
     }, []);
 
@@ -105,7 +107,7 @@ function Layout() {
               .then(res => res.json())
               .then(data => setHeroInfo(data))
               .catch(err => console.error("Failed to fetch heroInfo", err))
-              .finally(() => stopLoading()); //if broken change back to just "stopLoading"
+              .finally(() => stopLoading());
   }, []);
 
   const currentHero = heroInfo.find(h => h.path === pageKey);
@@ -122,9 +124,10 @@ function Layout() {
         <Route path="/news" element={<News/>} />
         <Route path="/sponsorship" element={<Sponsorship/>} />
         <Route path="/results" element={<Results />} />
+        <Route path="/contact" element={<Contact />} />
         <Route path="/admin" element={<RequireAuth> <Admin /> </RequireAuth>} />
       </Routes>
-      <Footer footerInfo = {footerInfo ? footerInfo[0] : null} />
+      {contactInfo && (<Footer footerInfo = {contactInfo} />)}
     </>
   );
 }
@@ -132,13 +135,13 @@ function Layout() {
 /* This is the actual "App" that gets returned to main.jsx and index.html */
 function App() {
   return(
-      <BrowserRouter>
-        <LoadingProvider>
+      <LoadingProvider>
+        <BrowserRouter>
           <Auth0ProviderNavigate>
             <Layout />
           </Auth0ProviderNavigate>
-        </LoadingProvider>
-      </BrowserRouter>
+        </BrowserRouter>
+      </LoadingProvider>
   )
 };
 

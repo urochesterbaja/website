@@ -33,13 +33,13 @@ function GalleryBlock({ gallery }) {
 
     return(
         <div className="gallery-block">
-            <h1>{gallery.year}</h1>
+            <h1>{gallery.title}</h1>
             <div className="gallery-row">
                 <button className="button-left" onClick={() => handlePrev()}>&#10094;</button>
                 <div className="viewport">
                     <div className="track" ref={trackRef} style={{transform : `translateX(-${currentIndex * 100}%)`}}>
                         {images.map((src, index) => {
-                        return <img key={index} src={src}></img>
+                        return <img key={index} src={src.URL}></img>
                     })}
                     </div>
                 </div>

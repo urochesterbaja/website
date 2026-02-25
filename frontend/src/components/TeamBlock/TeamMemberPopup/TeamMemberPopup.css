@@ -34,7 +34,7 @@ body.no-scroll {
   border-radius: 8px;
   position: relative;
   text-align: center;
-
+  color: black;
   transform: scale(0.9);
   opacity: 0;
   transition: transform 300ms ease, opacity 300ms ease;
@@ -44,7 +44,6 @@ body.no-scroll {
     transform: scale(1);
     opacity: 1;
 }
-
 
 .popup-close {
   position: absolute;

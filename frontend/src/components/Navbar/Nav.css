@@ -1,49 +1,55 @@
 .navbar {
   display: flex;
   align-items: center;
-  vertical-align: center;
   justify-content: space-between;
-  padding: 0rem 1rem;
-  background-color: rgba(255, 255, 255, 0.4);
-  border-bottom: 1px solid rgba(0, 30, 95, 0.1);
+  padding: 0 1rem;
   width: 100%;
   height: 5rem;
-  margin-left: auto;
-  margin-right: auto;
   position: fixed;
-  backdrop-filter: blur(5px);
+  margin: 0 auto;
   z-index: 9999;
+
+  background-color: rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(0, 30, 95, 0.1);
+  backdrop-filter: blur(5px);
+
   font-family: rubik;
   transition: background-color 0.2s ease, height 0.2s ease;
 }
 
-/* If you change the height of this, you also have to change the height of scroll-margin-top under the section element in app.css
- * This is so that the scroll feature in the navbar scrolls to the right location. */
-.navbar--scrolled{
+.navbar--scrolled {
   background-color: rgba(255, 255, 255, 0.9);
   height: 3.2rem;
-  vertical-align: center;
 }
 
 .logo {
-  margin-left: 1rem;
-  margin-right: 1rem;
-  margin-top: .3rem;
-  margin-bottom: .5rem;
-  text-shadow: 1.5px 1.5px 0px var(--dandelion-yellow);
+  margin: 0.3rem 1rem 0.5rem 1rem;
+  text-shadow: 1.5px 1.5px 0 var(--dandelion-yellow);
 }
 
 .logo a {
-  text-decoration: italic;
+  text-decoration: none;
   color: var(--ur-navy);
   font-size: 2.5rem;
   font-weight: 800;
 }
 
+.logo a.active {
+  border-bottom: none;
+}
+
 .logo img {
   max-width: 6rem;
   max-height: 3rem;
-  margin-top: .3rem;
+  margin-top: 0.3rem;
+}
+
+@media (max-width: 1230px) {
+  .logo i {
+    font-size: 0;
+    line-height: 0;
+    visibility: hidden;
+  }
 }
 
 .nav-links {
@@ -51,7 +57,6 @@
   align-items: center;
   list-style: none;
   margin-left: auto;
-  margin-right: 0;  
   padding: 0;
   font-size: 1rem;
 }
@@ -60,21 +65,12 @@
   display: flex;
   align-items: center;
   position: relative;
-  padding: 0 .8rem;
-  border-right: .1rem;
-  border-left: 0rem;
-  border-top: 0rem;
-  border-bottom: 0rem;
-  border-style: solid;
-  border-color: var(--ur-navy);
+  padding: 0 0.8rem;
+  border-right: 0.1rem solid var(--ur-navy);
 }
 
-.nav-links > li:last-of-type{
-  border-right: 0rem;
-}
-
-.dropdown-menu li {
-  border-right: 0rem;
+.nav-links > li:last-of-type {
+  border-right: none;
 }
 
 .nav-links a {
@@ -94,31 +90,19 @@
   font-weight: 600;
 }
 
-.nav-links .dropdown-menu a.active {
-  border-bottom: 0px solid rgb(0, 0, 0, 0)
-}
-
-.logo a.active {
-  border-bottom: none;
-}
-
-.dropdown {
-  position: relative;
-}
-
 #donate-button {
-  border-radius: 8px 8px 8px 8px;    
+  border-radius: 8px;
   background-color: var(--ur-navy);
   color: white;
   cursor: pointer;
-  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-  padding-left: .45rem;
-  padding-right: 0.45rem;
-  padding-top: 0.1rem;
-  padding-bottom: 0.1rem;
+  padding: 0.1rem 0.45rem;
+  font-size: 1.2rem;
   font-weight: 450;
   text-decoration: none;
-  font-size: 1.2rem;
+
+  transition: background-color 0.3s ease,
+              color 0.3s ease,
+              transform 0.3s ease;
 }
 
 #donate-button:hover {
@@ -127,25 +111,37 @@
   transform: scale(1.1);
 }
 
+.dropdown {
+  position: relative;
+}
 
 .dropdown-menu {
   position: absolute;
   top: 100%;
   left: 0;
 
-  padding: 0.4rem 0;
+  padding: 0.3rem 0;
   margin: 0;
-
   list-style: none;
-  background-color: rgba(245, 245, 245);
+
+  border-radius: 8px;
+  background-color: rgb(245, 245, 245);
   border: 1px solid rgba(0, 30, 95, 0.15);
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 
   opacity: 0;
   visibility: hidden;
-  transform: translateY(6px);
-  transition: opacity 0.2s ease, transform 0.2s ease;
+  transform: translateY(4px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
   z-index: 1000;
+}
+
+.dropdown-menu li {
+  border: none;
+  margin: 0;
+  padding-top: 0rem;
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
 }
 
 .dropdown-menu a {
@@ -153,16 +149,23 @@
   padding: 0.45rem 1rem;
   color: var(--ur-navy);
   white-space: nowrap;
+  border-radius: 8px;
 }
 
 .dropdown-menu a:hover {
   background-color: rgba(0, 30, 95, 0.06);
 }
 
-.dropdown:hover .dropdown-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
+.nav-links .dropdown-menu a.active { 
+    border-bottom: 0px solid rgb(0, 0, 0, 0) 
+}
+
+@media (min-width: 769px) {
+  .dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
 }
 
 .hamburger {
@@ -172,38 +175,18 @@
   border: none;
   color: var(--ur-navy);
   cursor: pointer;
-  margin-right: 0rem;
-}
-
-@media (max-width: 1150px) {
-  .logo i{
-    font-size: .0001rem;
-    line-height: .00001rem;
-    visibility:hidden;
-  }
-
 }
 
 @media (max-width: 768px) {
-  .navbar {
-    position: fixed;
-    display: flex;
-    align-items: center;
-    height: 3rem;
-    padding: 0 1rem;
-    background-color: rgba(255, 255, 255, 0.9);
-  }
 
+  .navbar,
   .navbar--scrolled {
     height: 3rem;
+    background-color: rgba(255, 255, 255, 0.9);
   }
 
   body.nav-open {
     overflow: hidden;
-  }
-
-  body.nav-open .navbar {
-    height: 3rem;
   }
 
   .hamburger {
@@ -213,28 +196,31 @@
   }
 
   .nav-links {
-    /*display: none;*/
-    opacity: 0;
-    visibility: hidden;
     flex-direction: column;
     position: absolute;
     top: 100%;
     right: 0;
     width: 100%;
+
     background-color: rgba(255, 255, 255, 0.9);
     align-items: center;
     gap: 1.5rem;
-    padding: 0;
-    z-index: 1000;
-    margin-top:0;
-    margin-bottom:0;
+    padding: 1rem 0;
+
+    opacity: 0;
+    visibility: hidden;
     transition: opacity 0.3s ease;
   }
 
   .nav-links.open {
-    display: flex;
-    visibility: visible;
     opacity: 1;
+    visibility: visible;
+  }
+
+  .nav-links li {
+    padding: 0;
+    border: none;
+    justify-content: center;
   }
 
   .nav-links a {
@@ -242,45 +228,19 @@
     font-weight: 600;
   }
 
-  .nav-links li {
-    padding: 0;
-    border: none;
-    justify-content: center;
-    margin-bottom: 0.5rem;
-  }
-
-  .dropdown-menu{
+  .dropdown-menu {
     display: none;
-  }
-
-  .dropdown:hover .dropdown-menu {
-    display:none;
   }
 
   .logo {
     margin: 0.5rem 0.5rem 0.5rem 1rem;
   }
 
-  .logo i{
-    font-size: .0001rem;
-    line-height: .00001rem;
-    visibility:hidden;
-  }
-
   .logo a {
-    color: var(--ur-navy);
     font-size: 1.5rem;
-    font-weight: 800;
-  }
-}
-
-
-@media(max-width: 500px) {
-  .logo i{
-    font-size: .0001rem;
-    line-height: .00001rem;
-    visibility:hidden;
   }
 
-
+  .logo i {
+    display: none;
+  }
 }

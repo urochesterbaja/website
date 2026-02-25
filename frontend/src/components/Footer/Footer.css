@@ -7,6 +7,7 @@
     background-color: var(--ur-navy);
     color: whitesmoke;
     margin-top: 0;
+    border-top: 1px solid black;
 }
 
 .footer-content {
@@ -103,6 +104,20 @@
 
 .subscribe-form button:hover {
   background-color: var(--ur-navy);
+}
+
+.admin-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px; 
+  
+  color: white;
+  text-decoration: underline;
+  font-size: 0.75rem;
+  
+  background: none;
+  border: none;
+  cursor: pointer;
 }
 
 @media (max-width: 1200px) {

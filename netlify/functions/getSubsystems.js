@@ -10,7 +10,7 @@ exports.handler = async function  (event, context) {
 
         const subsystems = await db.collection("subsystems")
             .find()
-            .sort({order : 1})
+            .sort({position : 1})
             .toArray();
         
         return {

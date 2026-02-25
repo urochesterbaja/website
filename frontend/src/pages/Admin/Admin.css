@@ -1,0 +1,245 @@
+.admin-page-container{
+    text-align: center;
+    justify-content: center;
+}
+.admin-h1 {
+  color: white;
+  border-bottom: 3px solid var(--dandelion-yellow);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.admin-workflow {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  width: 100%;
+  margin-bottom: 5rem;
+  padding-left: 5%;
+  padding-right: 5%;
+}
+
+.admin-panel {
+  background: var(--ur-navy);
+  color: white;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-top: 4px solid var(--ur-navy);
+  flex: 1;
+  min-width: 300px;
+}
+
+.admin-h3 {
+  margin-top: 0;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.page-selector {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.page-selector:focus {
+  outline: none;
+  border-color: var(--meliora-blue);
+}
+
+.component-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  gap: 0.5rem;
+}
+
+.component-list li, .add-component-button {
+  margin-bottom: 0.5rem;
+}
+
+.component-list button, .add-component-button {
+  width: 100%;
+  text-align: left;
+  padding: 0.8rem 1rem;
+  background: white;
+  color: var(--ur-navy);
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.component-list button:hover {
+  background: var(--meliora-blue);
+  color: white;
+}
+
+.component-editor {
+  background-color: var(--ur-navy);
+  color: white;
+  margin-top: 2rem;
+  padding: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  border-radius: 16px;
+
+}
+
+.component-editor-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+}
+
+.component-editor-field {
+    min-width: 10rem;
+    max-width: 25rem;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    color: var(--ur-navy);
+    border-radius: 4px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem;
+}
+
+.component-editor-container h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+.component-editor-container h5 {
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+
+.component-editor-container input,
+.component-editor-container textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: inherit;
+}
+
+.component-editor-container textarea {
+  min-height: 80px;
+  resize: vertical;
+}
+
+.component-editor button {
+  background-color: var(--dandelion-yellow);
+  color: var(--ur-navy);
+  font-weight: bold;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: transform 0.1s;
+}
+
+.component-editor button:hover {
+  filter: brightness(1.05);
+}
+
+.component-editor button:active {
+  transform: translateY(2px);
+}
+
+.component-editor button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+.switch {
+  position: relative;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input { 
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #ccc;
+  transition: .4s;
+  border-radius: 20px;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px; width: 14px;
+  left: 3px; bottom: 3px;
+  background-color: white;
+  transition: .4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+.array-dropdown-header{
+  background-color: white;
+  padding: 8px;
+  border: 1px solid white;
+  margin-top: 6px;
+  color: var(--ur-navy);
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header--trashed{
+  background-color: red;
+  color: white;
+  padding: 8px;
+  border: 1px solid white;
+  margin-top: 6px;
+  cursor: pointer;
+
+}
+
+.array-dropdown-body{
+  border: 1px solid #ddd;
+  border-top: none;
+  padding: 10px;
+}
+
+/* Live Preview Section */
+.admin-preview {
+  margin-top: 3rem;
+  border: 2px dashed white;
+  padding: 1rem;
+  border-radius: 8px;
+  margin: 2rem;
+  color: white;
+}
+
+.admin-preview h3 {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}

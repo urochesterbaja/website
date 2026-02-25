@@ -13,8 +13,13 @@ exports.handler = async (event) => {
             .findOne({ pageSlug });
 
         return {
-            statusCode: 200,
-            body: JSON.stringify(page.components)
+        statusCode: 200,
+        body: JSON.stringify({
+            components: page.components || [],
+            layoutConfig: page.layoutConfig || {
+            allowedDynamicComponents: []
+            }
+        })
         };
     }
     catch (error) {

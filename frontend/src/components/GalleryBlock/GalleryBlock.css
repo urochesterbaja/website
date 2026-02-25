@@ -38,6 +38,7 @@
   width: 600px;
   height: 400px;
   overflow: hidden; /* hides other images */
+  border-radius: 8px;
 }
 
 .track {

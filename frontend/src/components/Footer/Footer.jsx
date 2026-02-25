@@ -1,6 +1,8 @@
 import "./Footer.css";
 import { FaInstagram } from "react-icons/fa6";
 import { FaYoutube } from "react-icons/fa";
+import { NavLink } from "react-router-dom";
+
 
 import { useState, useEffect } from "react"
 
@@ -68,6 +70,8 @@ function Footer( { footerInfo }) {
                     </form>
                     {/*this is the status message that displays below the form when you try to submit an email*/}
                     {status && <p className="form-status">{status}</p>} 
+
+                    <NavLink className="admin-button" to="/admin">Admin</NavLink>
                 </div>
             </div>
         </footer>

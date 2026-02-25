@@ -9,7 +9,7 @@ import ContentBlock from "../components/ContentBlock/ContentBlock"
 export default function Sponsorship() {
     const {startLoading, stopLoading} = useLoading();
     const { hash, pathname } = useLocation();
-    const [partnerPageContent, setPartnerPageContent] = useState(null);
+    const [partnerPageContent, setPartnerPageContent] = useState([]);
     const [partners, setPartners] = useState([])
 
     //this bit is copied into most of the pages, it handles the smooth scrolling when you select a dropdown in the navbar
@@ -42,30 +42,34 @@ export default function Sponsorship() {
             .finally(() => stopLoading());
     }, []);
 
-    const partnersByTier = partners.reduce((acc, partner) => {
-        if (!acc[partner.tier]) acc[partner.tier] = [];
-        acc[partner.tier].push(partner);
-        return acc;
-    }, {});
-
     return (
         <div className="page-container">
-            {partnerPageContent && <ContentBlock title={partnerPageContent.blurb.title} content={partnerPageContent.blurb.content}/>}
+            {partnerPageContent?.[1] && <ContentBlock 
+                                    title={partnerPageContent[0].title} 
+                                    content={partnerPageContent[0].content} 
+                                    content2={partnerPageContent[0].content2} 
+                                    imgURL={partnerPageContent[0].img} 
+                                    flip={partnerPageContent[0].flip} 
+                                    buttonText={partnerPageContent[0].buttonText}
+                                    buttonLink={partnerPageContent[0].buttonLink}/>}
             <section id="partners">
-                {Object.entries(partnersByTier).map(([tier, imgList]) => (
+                {partners.map((item) => (
                     <PartnerBlock
-                        key={tier}
-                        tier={tier.toUpperCase()} 
-                        imgList={imgList}  
+                        key={item.tier}
+                        tier={item.tier.toUpperCase()} 
+                        imgList={item.partners}  
                     />
                 ))}
             </section>
             <section id="donate">
-                {partnerPageContent && <ContentBlock 
-                    title={partnerPageContent.donateBlock.title} 
-                    content={partnerPageContent.donateBlock.content} 
-                    buttonText={partnerPageContent.donateBlock.buttonText} 
-                    buttonLink={partnerPageContent.donateBlock.buttonLink}>
+                {partnerPageContent?.[1] && <ContentBlock 
+                    title={partnerPageContent[1].title} 
+                    content={partnerPageContent[1].content} 
+                    conten2={partnerPageContent[1].content2}
+                    imgURL={partnerPageContent[1].img}
+                    flip={partnerPageContent[1].flip}
+                    buttonText={partnerPageContent[1].buttonText} 
+                    buttonLink={partnerPageContent[1].buttonLink}>
                 </ContentBlock> }
             </section>
         </div>
