@@ -10,6 +10,7 @@ exports.handler = async function  (event, context) {
 
         const teamMembers = await db.collection("teamMembers")
             .find()
+            .sort({position : 1})
             .toArray();
         
         return {

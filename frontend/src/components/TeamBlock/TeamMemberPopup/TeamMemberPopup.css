@@ -45,6 +45,12 @@ body.no-scroll {
     opacity: 1;
 }
 
+.h2-no-margin {
+  margin-bottom : 0rem;
+  margin-top: 0rem;
+  
+}
+
 .popup-close {
   position: absolute;
   top: 12px;
@@ -67,9 +73,22 @@ body.no-scroll {
   margin-bottom: .4rem;
 }
 
+.popup-icon-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
 .linkedin {
     color: #0077B5;
     font-size: 2rem;
+}
+
+.email {
+  color: black;
+  font-size: 2rem;
 }
 
 @media(max-width:768px){

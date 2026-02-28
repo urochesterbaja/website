@@ -29,8 +29,12 @@
     transition: scale 0.2s ease;
     cursor: pointer;
     /* padding: 1rem;
-    border: .1rem solid var(--ur-navy;
+    border: .1rem solid var(--ur-navy);
     border-radius: 16px; */
+}
+
+.team-member-p{
+    text-align: center;
 }
 
 .team-member:hover {
