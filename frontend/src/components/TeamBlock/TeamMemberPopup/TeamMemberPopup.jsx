@@ -28,7 +28,20 @@ function TeamMemberPopup({selectedMember, onClose}){
     const role = selectedMember.role ? <h4>Role: {selectedMember.role}</h4> : null;
     const major = selectedMember.major ? <h4>Major : {selectedMember.major}</h4> : null;
     const year = selectedMember.year ? <h4>This is {selectedMember.name}'s {selectedMember.year} year on Baja</h4> : null;
-    const linkedin = selectedMember.linkedin ? <a className="linkedin" href={selectedMember.linkedin} target="_blank" rel="noreferrer"><FaLinkedin /></a> : null;
+    let linkedinUrl = selectedMember.linkedin;
+
+    if (linkedinUrl && !linkedinUrl.startsWith("https://")) {
+    linkedinUrl = "https://" + linkedinUrl;
+    }
+
+    const linkedin = linkedinUrl
+    ? (
+        <a className="linkedin" href={linkedinUrl} target="_blank" rel="noreferrer">
+        <FaLinkedin />
+        </a>
+    )
+    : null;  
+      
     const email = selectedMember.email ? <a className="email" href={`mailto:${selectedMember.email}`} target="_blank"><CiMail/></a> : null;
 
     return(
