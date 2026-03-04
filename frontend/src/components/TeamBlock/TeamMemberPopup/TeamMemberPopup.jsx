@@ -26,7 +26,7 @@ function TeamMemberPopup({selectedMember, onClose}){
     }, [onClose]);
 
     const role = selectedMember.role ? <h4>Role: {selectedMember.role}</h4> : null;
-    const major = selectedMember.major ? <h4>Major : {selectedMember.major}</h4> : null;
+    const major = selectedMember.major ? <h4>Major: {selectedMember.major}</h4> : null;
     const year = selectedMember.year ? <h4>This is {selectedMember.name}'s {selectedMember.year} year on Baja</h4> : null;
     let linkedinUrl = selectedMember.linkedin;
 
@@ -41,7 +41,7 @@ function TeamMemberPopup({selectedMember, onClose}){
         </a>
     )
     : null;  
-      
+
     const email = selectedMember.email ? <a className="email" href={`mailto:${selectedMember.email}`} target="_blank"><CiMail/></a> : null;
 
     return(
