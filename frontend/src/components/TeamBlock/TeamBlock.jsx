@@ -13,7 +13,7 @@ function TeamBlock({ name, memberList }) {
                     <div className="team-member-container">
                         {memberList.map((item, index) => (
                             <div key={index} className="team-member" onClick={() => setSelectedMember(item)}>
-                                <img className="team-member-image" src={item.img ? item.img : "/team_member_pics/profile-pic-default.png"}></img>
+                                <img className="team-member-image" src={item.img ? item.img : "/team_member_pics/profile-pic-default.png"} alt={`View more information about ${item.name}`}></img>
                                 <p className="team-member-p" ><b>{item.name}</b></p>
                                 <p className="team-member-p"> {item.position}</p>
                             </div>

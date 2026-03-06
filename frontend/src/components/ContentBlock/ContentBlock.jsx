@@ -4,7 +4,7 @@ function ContentBlock({title, imgURL = null, content, content2 = null, flip= fal
     const hasImage = Boolean(imgURL)
 
     //this line sets the image element to either null or the image that was input (defaults to null)
-    const img = hasImage ? <div className="image-container"><img src={imgURL}></img></div> : null
+    const img = hasImage ? <div className="image-container"><img src={imgURL} aria-labelledby="content"></img></div> : null
 
     //this line does the same but with button
     const button = buttonText ? <div className="button-container"><a className="big-button" href={buttonLink} target="_blank" rel="noopener noreferrer"><i>{buttonText}</i></a></div> : null
@@ -27,7 +27,7 @@ function ContentBlock({title, imgURL = null, content, content2 = null, flip= fal
             <div className={`content-block ${dark ? "dark-scheme" : null}`}>
                 <div className={`content-row ${hasImage ? "has-image" : "no-image"} ${flip ? "flipped" : null}`}>
                     {img}
-                    <div className={textClass}>
+                    <div className={textClass} id="content">
                         <h2>{title}</h2>
                         <p>{content}</p>
                         {content2Node}

@@ -36,21 +36,21 @@ function TeamMemberPopup({selectedMember, onClose}){
 
     const linkedin = linkedinUrl
     ? (
-        <a className="linkedin" href={linkedinUrl} target="_blank" rel="noreferrer">
+        <a className="linkedin" href={linkedinUrl} target="_blank" rel="noreferrer" aria-label={`Linkedin page for ${selectedMember.name}`}>
         <FaLinkedin />
         </a>
     )
     : null;  
 
-    const email = selectedMember.email ? <a className="email" href={`mailto:${selectedMember.email}`} target="_blank"><CiMail/></a> : null;
+    const email = selectedMember.email ? <a className="email" href={`mailto:${selectedMember.email}`} target="_blank" aria-label={`Send mail to ${selectedMember.name}`}><CiMail/></a> : null;
 
     return(
         <div className={`popup-overlay ${visible ? "show" : ""}`} onClick={onClose}>
             <div className={`popup-content ${visible ? "show" : ""}`} onClick={(e) => e.stopPropagation()}>
-                <button className="popup-close" onClick={onClose}>
+                <button className="popup-close" onClick={onClose} aria-label="Close team member popup.">
                     <FaTimes />
                 </button>
-                <img src={selectedMember.img || "/team_member_pics/profile-pic-default.png"} alt={selectedMember.name} className="popup-image"/>
+                <img src={selectedMember.img || "/team_member_pics/profile-pic-default.png"} className="popup-image"/>
                 <h2 className="h2-no-margin">{selectedMember.name}</h2>
                 <h4>{selectedMember.position}</h4>
                 {role}

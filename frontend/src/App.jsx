@@ -117,7 +117,7 @@ function Layout() {
     <>
       {showTransition && <LoadingScreen />}
       <ScrollToHash />
-      <Navbar />
+      <Navbar role="navigation"/>
       <Hero heroInfo = {currentHero}/>
       <Routes>
         <Route path="/" element={<Home/>} />

@@ -6,44 +6,43 @@ function GalleryBlock({ gallery }) {
 
     const [currentIndex, setCurrentIndex] = useState(0)
     const trackRef = useRef(null)
+    const intervalRef = useRef(null) // store interval reference
+
+    const startInterval = () => {
+        if (intervalRef.current) clearInterval(intervalRef.current) // clear existing
+        intervalRef.current = setInterval(() => {
+            setCurrentIndex((prev) => (prev >= images.length - 1 ? 0 : prev + 1))
+        }, 3000)
+    }
 
     const handleNext = () => {
-        setCurrentIndex((prev) => {
-            if (prev >= images.length - 1) return 0
-            return prev + 1
-        })
+        setCurrentIndex((prev) => (prev >= images.length - 1 ? 0 : prev + 1))
+        startInterval() // reset timer on click
     }
 
     const handlePrev = () => {
-        setCurrentIndex((prev) => {
-            if(prev <= 0) return images.length - 1
-            return prev - 1
-        })
+        setCurrentIndex((prev) => (prev <= 0 ? images.length - 1 : prev - 1))
+        startInterval() // reset timer on click
     }
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((prev) => {
-                if (prev >= images.length - 1) return 0
-                return prev + 1
-            })
-        }, 3000)
-        return () => clearInterval(interval) // cleanup on unmount
-        }, [images.length])
+        startInterval()
+        return () => clearInterval(intervalRef.current) // cleanup on unmount
+    }, [images.length])
 
     return(
         <div className="gallery-block">
             <h1>{gallery.title}</h1>
             <div className="gallery-row">
-                <button className="button-left" onClick={() => handlePrev()}>&#10094;</button>
+                <button className="button-left" onClick={() => handlePrev()} alt="Scroll Left.">&#10094;</button>
                 <div className="viewport">
                     <div className="track" ref={trackRef} style={{transform : `translateX(-${currentIndex * 100}%)`}}>
                         {images.map((src, index) => {
-                        return <img key={index} src={src.URL}></img>
+                        return <img key={index} src={src.URL} alt={ src.altText ? src.altText : `Images from ${gallery.title}, more descriptions coming soon` }></img>
                     })}
                     </div>
                 </div>
-                <button className="button-right" onClick={() => handleNext()}>&#10095;</button>
+                <button className="button-right" onClick={() => handleNext()} alt="Scroll right.">&#10095;</button>
             </div>
             <div className="button-container">
                 <a className="big-button" href={gallery.link} target="_blank" rel="noopener noreferrer"><i>See the whole gallery!</i>
