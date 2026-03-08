@@ -17,11 +17,10 @@ function Hero({ heroInfo }) {
 
   return (
     <section className="hero" style={{ backgroundImage: `url(${heroInfo.bgImgURL})`, height: heroInfo["bgHeight"]}}>
-        <div className="hero-overlay">  {/* "dims" the image for readability */}
+        <div className="hero-overlay">  {/* dims the image for readability */}
             <div className={`hero-content ${fadeIn ? "fade-in" : ""}`}>
                 <h1><i>{ heroInfo["title"] }</i></h1>
                 <p>{ heroInfo["subtitle"] }</p>
-                {/* <button className="hero-button">Find out more!</button> */}
                 </div>
         </div>
     </section>

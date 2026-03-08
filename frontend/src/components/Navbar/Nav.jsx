@@ -3,9 +3,10 @@ import { useState, useEffect } from "react"
 import "./Nav.css";
 
 function Navbar() {
-  {/*scroll functionality, changes style when scrolling to match background */}
+  // scroll functionality, changes height and transparency when scrolling to match background 
   const [scrolled, setScrolled] = useState(false);
-  const [partnerPageContent, setPartnerPageContent] = useState([]);
+
+  const [partnerPageContent, setPartnerPageContent] = useState([]); // pull donate link from sponsor page db
 
   useEffect(() => {
         fetch("/.netlify/functions/getPartnerPageContent")
@@ -16,7 +17,7 @@ function Navbar() {
 
   useEffect(() => {
     const handleScroll = () => {
-      // the X in "window.scrollY > X" is the value that sets when the navbar collapses
+      // the X in "window.scrollY > X" is the value that dictates when the navbar collapses
       // higher value --> more scrolling before navbar collapses
       setScrolled(window.scrollY > 260);
     };
@@ -37,6 +38,7 @@ function Navbar() {
   }
 
   // cleanup in case component unmounts
+  // shouldn't ever unmount but good practice
   return () => {
     document.body.classList.remove("nav-open");
   };
@@ -45,7 +47,7 @@ function Navbar() {
   return (
     <nav className={`navbar ${scrolled ? "navbar--scrolled" : ""}`}>
       <h1 className="logo">
-        <NavLink to="/" end onClick={closeMenu}>
+        <NavLink to="/" end onClick={closeMenu}> {/* link logo to homepage */}
           <img src="/Logotrans.png"></img>
           <i>YELLOWJACKET RACING</i>
         </NavLink>
@@ -70,7 +72,7 @@ function Navbar() {
           <NavLink to="/news" onClick={closeMenu}>News</NavLink>
           <ul className="dropdown-menu">
             <li><NavLink to="/news#newsletters" onClick={closeMenu}>Newsletters</NavLink></li>
-            <li><NavLink to="./news#gallery" onClick={closeMenu}>Gallery</NavLink></li>
+            <li><NavLink to="/news#gallery" onClick={closeMenu}>Gallery</NavLink></li>
           </ul>
         </li>
         
@@ -86,7 +88,8 @@ function Navbar() {
 
         <li className="dropdown"><NavLink to="/contact" onClick={closeMenu}>Contact Us</NavLink></li>
 
-        {partnerPageContent?.[1] && <li className="dropdown"><a id="donate-button" href={partnerPageContent[1].buttonLink} target="_blank" rel="noopener noreferrer"><i>Donate</i></a></li>}
+        {// wait to render donate button until sponsor db pull
+        partnerPageContent?.[1] && <li className="dropdown"><a id="donate-button" href={partnerPageContent[1].buttonLink} target="_blank" rel="noopener noreferrer"><i>Donate</i></a></li>}
       </ul>
     </nav>
   );

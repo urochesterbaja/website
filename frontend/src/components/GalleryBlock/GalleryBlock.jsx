@@ -1,6 +1,10 @@
 import "./GalleryBlock.css"
 import { useState, useRef, useEffect } from "react"
 
+//the way this one works is a little confusing
+//basically, there's a viewport that's exactly the width of 1 image
+//and behind the viewport, there's a number of images arranged horizontally that stretch outside of the viewport
+//so, when the gallery "slides", it's really just transposing the images behind the viewport one "image unit" to the left or right
 function GalleryBlock({ gallery }) {
     const images = gallery.images
 
@@ -38,7 +42,7 @@ function GalleryBlock({ gallery }) {
                 <div className="viewport">
                     <div className="track" ref={trackRef} style={{transform : `translateX(-${currentIndex * 100}%)`}}>
                         {images.map((src, index) => {
-                        return <img key={index} src={src.URL} alt={ src.altText ? src.altText : `Images from ${gallery.title}, more descriptions coming soon` }></img>
+                        return <img key={index} src={src.URL} alt={src.altText}></img>
                     })}
                     </div>
                 </div>

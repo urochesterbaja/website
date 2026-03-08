@@ -19,6 +19,7 @@ export default function Contact() {
     }, []);
 
     
+    //wait for contactInfo to render before returning, since it's an object not an array
     return (
         <div className="page-container">
             {contactInfo && (<ContactBlock contactCards={contactInfo["contactCards"]} /> )}

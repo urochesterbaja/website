@@ -10,19 +10,19 @@ function TeamMemberPopup({selectedMember, onClose}){
     const [visible, setVisible] = useState(false)
 
     useEffect(() => {
-    setVisible(true);
+        setVisible(true); 
 
-    document.body.classList.add("no-scroll");
+        document.body.classList.add("no-scroll"); //prevent scrolling on rest of site
 
-    const handleEsc = (e) => {
-      if (e.key === "Escape") onClose();
-    };
-    window.addEventListener("keydown", handleEsc);
+        const handleEsc = (e) => {
+        if (e.key === "Escape") onClose();
+        };
+        window.addEventListener("keydown", handleEsc);
 
-    return () => {
-      document.body.classList.remove("no-scroll");
-      window.removeEventListener("keydown", handleEsc);
-    };
+        return () => {
+        document.body.classList.remove("no-scroll");
+        window.removeEventListener("keydown", handleEsc);
+        };
     }, [onClose]);
 
     const role = selectedMember.role ? <h4>Role: {selectedMember.role}</h4> : null;
@@ -30,20 +30,25 @@ function TeamMemberPopup({selectedMember, onClose}){
     const year = selectedMember.year ? <h4>This is {selectedMember.name}'s {selectedMember.year} year on Baja</h4> : null;
     let linkedinUrl = selectedMember.linkedin;
 
+    // ensure starts with https:// to prevent routing within domain
+    // if link doesn't contain https://, this would route to urbajasae.com/{linkedinUrl}
     if (linkedinUrl && !linkedinUrl.startsWith("https://")) {
     linkedinUrl = "https://" + linkedinUrl;
     }
 
+    //dump url into icon
     const linkedin = linkedinUrl
-    ? (
-        <a className="linkedin" href={linkedinUrl} target="_blank" rel="noreferrer" aria-label={`Linkedin page for ${selectedMember.name}`}>
-        <FaLinkedin />
-        </a>
-    )
-    : null;  
+        ? (
+            <a className="linkedin" href={linkedinUrl} target="_blank" rel="noreferrer" aria-label={`Linkedin page for ${selectedMember.name}`}>
+                <FaLinkedin />
+            </a>
+        )
+        : null;  
 
     const email = selectedMember.email ? <a className="email" href={`mailto:${selectedMember.email}`} target="_blank" aria-label={`Send mail to ${selectedMember.name}`}><CiMail/></a> : null;
 
+    //overlay onClick closes function if you click outside of the box
+    //content onClick prevents click passthrough so you don't accidentally click "behind" the box
     return(
         <div className={`popup-overlay ${visible ? "show" : ""}`} onClick={onClose}>
             <div className={`popup-content ${visible ? "show" : ""}`} onClick={(e) => e.stopPropagation()}>

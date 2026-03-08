@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+
 import { useLoading } from "../LoadingContext"
 
-import "./Home.css"
+import "./Home.css" //gets its own css because it has a light background section
+
 import ContentBlock from "../components/ContentBlock/ContentBlock.jsx"
 import TeamBlock from "../components/TeamBlock/TeamBlock.jsx"
 
@@ -52,6 +54,7 @@ export default function Home() {
             .finally(() => stopLoading());
     }, []);
 
+    //in returns, always map values from db pull to aid scalability
     return (
         <div className="page-container">
 

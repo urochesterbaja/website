@@ -2,6 +2,8 @@ import { createContext, useContext, useState, useEffect } from "react";
 
 const LoadingContext = createContext();
 
+// this whole function uses react context, it's a bit confusing so check it out via docs first
+// basically, it just tracks how many calls to loading there are, and stops showing the loading screen when the count gets to 0
 export function LoadingProvider({ children }) {
     const [loadingCount, setLoadingCount] = useState(0);
     const [showTransition, setShowTransition] = useState(false);
@@ -10,8 +12,6 @@ export function LoadingProvider({ children }) {
     if (loadingCount > 0) {
         setShowTransition(true);
     } else {
-        // If you don't actually need a fade-out animation delay, 
-        // set this to false immediately.
         setShowTransition(false);
     }
     }, [loadingCount]);
@@ -19,6 +19,8 @@ export function LoadingProvider({ children }) {
     const startLoading = () => setLoadingCount(c => c + 1);
     const stopLoading = () => setLoadingCount(c => Math.max(0, c - 1));
 
+    // return the loadingprovider with the initialized values
+    // {children} should be LoadingScreen.jsx
     return (
         <LoadingContext.Provider value={{
             isLoading: loadingCount > 0,

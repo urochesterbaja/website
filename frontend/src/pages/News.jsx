@@ -45,7 +45,7 @@ function News () {
         <>
         <section id="newsletters">
             {newsArticles.map((item, index) => (
-                <NewsBlock newsArticles={ item }></NewsBlock>
+                <NewsBlock newsArticles={item}></NewsBlock>
             ))}
         </section>
 

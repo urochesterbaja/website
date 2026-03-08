@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+
+// this one's pretty easy
+// just pull the pages, then map pages as options in the selector menu
+// note that this doesn't trigger anything unless onSelect is defined when the component is placed in another page
+// the intention is that onSelect triggers the corresponding component list of the page to render
 export default function PageSelector({ token, onSelect }) {
   const [pages, setPages] = useState([]);
 

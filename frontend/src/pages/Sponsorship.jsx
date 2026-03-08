@@ -45,13 +45,15 @@ export default function Sponsorship() {
     return (
         <div className="page-container">
             {partnerPageContent?.[1] && <ContentBlock 
-                                    title={partnerPageContent[0].title} 
-                                    content={partnerPageContent[0].content} 
-                                    content2={partnerPageContent[0].content2} 
-                                    imgURL={partnerPageContent[0].img} 
-                                    flip={partnerPageContent[0].flip} 
-                                    buttonText={partnerPageContent[0].buttonText}
-                                    buttonLink={partnerPageContent[0].buttonLink}/>}
+                                            title={partnerPageContent[0].title} 
+                                            content={partnerPageContent[0].content} 
+                                            content2={partnerPageContent[0].content2} 
+                                            imgURL={partnerPageContent[0].img} 
+                                            flip={partnerPageContent[0].flip} 
+                                            buttonText={partnerPageContent[0].buttonText}
+                                            buttonLink={partnerPageContent[0].buttonLink}/>
+            }
+
             <section id="partners">
                 {partners.map((item) => (
                     <PartnerBlock
@@ -61,6 +63,7 @@ export default function Sponsorship() {
                     />
                 ))}
             </section>
+
             <section id="donate">
                 {partnerPageContent?.[1] && <ContentBlock 
                     title={partnerPageContent[1].title} 

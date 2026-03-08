@@ -1,10 +1,15 @@
 import { useEffect, useState } from "react";
 import DocumentFields from "./DocumentFields"
 
+// this takes in a component (db document) and preview element
+// it basically works as a wrapper for document fields that handles preview and data fetch/update from the db
+// all of the data fetch/update within fields happens locally, doesn't get saved until it propogates back up to here
 export default function DocumentEditor({ token, component, preview }) {
   const [data, setData] = useState(null);
   const [saving, setSaving] = useState(false);
 
+  //set the data of the preview element with the document that's being retrieved
+  //this allows for live preview updates
   useEffect(() => {
     fetch("/.netlify/functions/getDocument", {
       method: "POST",
@@ -15,6 +20,8 @@ export default function DocumentEditor({ token, component, preview }) {
       .then(setData);
   }, []);
 
+  // this is the bit that actually saves the data to the db
+  // access the collection and then the refID (hashed value) to get to doc
   const save = async () => {
     setSaving(true);
 
@@ -34,6 +41,7 @@ export default function DocumentEditor({ token, component, preview }) {
 
   if (!data) return <div>Loading document...</div>;
 
+  //returns documentFields, which dictates the actual editing
   return (
     <>
     <div className="component-editor">

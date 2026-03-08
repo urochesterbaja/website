@@ -12,6 +12,7 @@ function Footer( { footerInfo }) {
 
     //this function handles when an email address is submitted through the form
     //frankly, it was written by ChatGPT, so take that as you will
+    //i should have used Claude LMAO, at the time of writing this opus 4.6 just came out
     //however, the comments are mine (WH) and so hopefully they are helpful
     const handleSubmit = async (e) => {
         e.preventDefault();     //prevents page from reloading when email is submitted

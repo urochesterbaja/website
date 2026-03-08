@@ -21,7 +21,8 @@ function TeamBlock({ name, memberList }) {
                     </div>
             </div>
 
-            {selectedMember && <TeamMemberPopup selectedMember={selectedMember} onClose={() => setSelectedMember(null)}/>}
+            {// when a member is selected, return popup
+            selectedMember && <TeamMemberPopup selectedMember={selectedMember} onClose={() => setSelectedMember(null)}/>}
         </>
     );
 };
