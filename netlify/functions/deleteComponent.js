@@ -10,10 +10,6 @@ exports.handler = async (event) => {
       return { statusCode: 405, body: "Method Not Allowed" };
     }
 
-    // 🔐 Optional Auth0 validation
-    // const token = event.headers.authorization?.split(" ")[1];
-    // await verifyAuth0Token(token);
-
     const { pageSlug, componentId } = JSON.parse(event.body || "{}");
 
     if (!pageSlug || !componentId) {
@@ -27,7 +23,6 @@ exports.handler = async (event) => {
 
     const pageCollection = db.collection("pageStructure");
 
-    // 1️⃣ Get page
     const page = await pageCollection.findOne({ pageSlug });
 
 
@@ -38,7 +33,6 @@ exports.handler = async (event) => {
       };
     }
 
-    // 2️⃣ Find component
     const component = page.components.find(c => c.id === componentId);
 
     if (!component) {
@@ -48,7 +42,6 @@ exports.handler = async (event) => {
       };
     }
 
-    // 3️⃣ Prevent deleting static components
     if (!component.isDynamic) {
       return {
         statusCode: 403,
@@ -56,7 +49,6 @@ exports.handler = async (event) => {
       };
     }
 
-    // 4️⃣ Delete referenced content document
     if (component.refId && component.collection) {
       try {
         await db.collection(component.collection).deleteOne({
@@ -64,11 +56,9 @@ exports.handler = async (event) => {
         });
       } catch (err) {
         console.warn("Failed deleting referenced doc:", err);
-        // Continue anyway — structure cleanup still matters
       }
     }
 
-    // 5️⃣ Remove component from pageStructure
     await pageCollection.updateOne(
       { pageSlug },
       { $pull: { components: { id: componentId } } }

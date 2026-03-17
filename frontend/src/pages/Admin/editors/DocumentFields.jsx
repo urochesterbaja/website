@@ -52,8 +52,6 @@ function DocumentFields({ data, setData, token }) {
                 key={item._id || index}
                 title={dropdownTitle}
                 // if trash hit then splice the item out of the array
-                // there's a bit of deprecated code in here where it stores deleted elements in a variable
-                // THIS IS THE "add many items" BUG, it is fixable if you fix function
                 onTrash={() => {
                     setData(prev => {
                     const current = [...prev[key]];

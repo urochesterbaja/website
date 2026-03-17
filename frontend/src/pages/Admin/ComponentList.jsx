@@ -30,7 +30,7 @@ export default function ComponentList({ token, pageSlug, onSelect }) {
   //this deletes components
   const handleDelete = async (component) => {
     await fetch("/.netlify/functions/deleteComponent", {
-      method: "POST",
+      method: "DELETE",
       headers: { Authorization: `Bearer ${token}` },
       body: JSON.stringify({ pageSlug, componentId: component.id })
     });

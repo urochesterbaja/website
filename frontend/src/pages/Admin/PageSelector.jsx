@@ -10,6 +10,7 @@ export default function PageSelector({ token, onSelect }) {
 
   useEffect(() => {
     fetch("/.netlify/functions/getPages", {
+      method: "HEAD",
       headers: { Authorization: `Bearer ${token}` }
     })
       .then(r => r.json())
