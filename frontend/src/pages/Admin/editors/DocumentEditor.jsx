@@ -36,7 +36,6 @@ export default function DocumentEditor({ token, component, preview }) {
     });
 
     setSaving(false);
-    alert("Saved!");
   };
 
   if (!data) return <div>Loading document...</div>;

@@ -51,7 +51,7 @@ function News () {
 
         <section id="gallery">
             {photoGallery.map((item, index) => (
-            <GalleryBlock key={index} gallery={item} />
+                <GalleryBlock key={index} gallery={item} />
             ))}
         </section>
         </>

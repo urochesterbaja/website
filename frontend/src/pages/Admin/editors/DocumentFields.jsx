@@ -38,7 +38,6 @@ function DocumentFields({ data, setData, token }) {
         <div key={key} className="component-editor-row">
           <h4>{label} (Collection)</h4>
 
-          
           {// for every element in the array map it to a dropdown containing a recursive documentFields call
           //the dropdown is listed as a function at the end of this doc
           value.map((item, index) => {
@@ -49,16 +48,16 @@ function DocumentFields({ data, setData, token }) {
 
             return (
                 <ArrayItemDropdown
-                key={item._id || index}
-                title={dropdownTitle}
-                // if trash hit then splice the item out of the array
-                onTrash={() => {
-                    setData(prev => {
-                    const current = [...prev[key]];
-                    current.splice(index, 1);
-                    return { ...prev, [key]: current };
-                    });
-                }}
+                  key={item._id || index}
+                  title={dropdownTitle}
+                  // if trash hit then splice the item out of the array
+                  onTrash={() => {
+                      setData(prev => {
+                      const current = [...prev[key]];
+                      current.splice(index, 1);
+                      return { ...prev, [key]: current };
+                      });
+                  }}
                 >
                   <DocumentFields
                       data={item}
@@ -68,12 +67,9 @@ function DocumentFields({ data, setData, token }) {
                         //when an array element gets edited, propogate changes up by one layer
                           const newArr = [...prev[key]];
 
-                          // editing array elements actually returns the edit function, so this bit of code makes sure the actual data gets edited
-                          const resolved =
-                          typeof updatedItem === "function"
-                              ? updatedItem(prev[key][index])
-                              : updatedItem;
-
+                          // editing array elements actually returns the edit function, because it's a nested component, so it passes the function back up instead of the object
+                          // this fixes that issue
+                          const resolved = typeof updatedItem === "function" ? updatedItem(prev[key][index]) : updatedItem;
                           newArr[index] = resolved;
                           return { ...prev, [key]: newArr };
                       });
@@ -128,6 +124,18 @@ function DocumentFields({ data, setData, token }) {
         );
 
       case "string":
+        if(key === "date"){
+          return (
+              <div key={key} className="component-editor-field">
+                <h5>{label} (MM/DD/YYYY)</h5>
+                <input
+                  type= "date"
+                  value={value}
+                  onChange={e => updateField(key, e.target.value)}
+                />
+              </div>
+            );
+        }
         const isLong = value.length > 80 || value.includes("\n");
         return (
           <div key={key} className="component-editor-field">
@@ -146,11 +154,10 @@ function DocumentFields({ data, setData, token }) {
           </div>
         );
 
-      //object case shouldn't happen, since documentFields is designed to render objects
-      //if this ever comes up it should be replaced with a recursive call to documentFields instead
+
+      //object case is  backup default, should just show a regular field
       case "object":
         if (value === null) return null;
-
         return (
           <div key={key} className="component-editor-field">
             <h5>{label} (Object)</h5>
