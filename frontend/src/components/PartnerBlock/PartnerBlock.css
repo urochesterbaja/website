@@ -63,6 +63,7 @@
 @media (max-width: 768px) {
     .partner-block {
         padding: 2.5rem 1.5rem;
+        width: 90%;
     }
 
     .img-container a:nth-child(odd) {
