@@ -67,5 +67,11 @@
         flex-direction: column;
     }
 
+    .results-image-container {
+        width: 85%;
+    }
 
+    .build-name {
+        font-size: 2rem;
+    }
 }

@@ -55,13 +55,15 @@ export default function Sponsorship() {
             }
 
             <section id="partners">
-                {partners.map((item) => (
-                    <PartnerBlock
-                        key={item.tier}
-                        tier={item.tier.toUpperCase()} 
-                        imgList={item.partners}  
-                    />
-                ))}
+            {partners.map((item) =>
+                item.partners?.length > 0 && (
+                <PartnerBlock
+                    key={item.tier}
+                    tier={item.tier.toUpperCase()}
+                    imgList={item.partners}
+                />
+                )
+            )}
             </section>
 
             <section id="donate">

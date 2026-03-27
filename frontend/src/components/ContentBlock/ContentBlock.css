@@ -120,6 +120,7 @@ img {
 
     .image-container {
         padding: .1rem;
+        max-width: 85%;
     }
 
     .text-container, .text-container-flipped {

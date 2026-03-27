@@ -99,15 +99,19 @@
 }
 
 @media (max-width: 1040px) {
+    .gallery-h1{
+        font-size: 2rem;
+        text-align: center;
+    }
     .track img {
-        width: 300px;
+        width: 450px;
         height: auto;
         object-fit: cover;
         flex-shrink: 0; /* prevents images from shrinking */
     }
     .viewport {
-        width: 300px;
-        height: 200px;
+        width: 450px;
+        height: 301px;
         overflow: hidden; /* hides other images */
     }
 
@@ -118,14 +122,14 @@
 
 @media (max-width: 600px) {
     .track img {
-        width: 200px;
+        width: 350px;
         height: auto;
         object-fit: cover;
         flex-shrink: 0; /* prevents images from shrinking */
     }
     .viewport {
-        width: 200px;
-        height: 134px;
+        width: 350px;
+        height: 234px;
         overflow: hidden; /* hides other images */
     }
 

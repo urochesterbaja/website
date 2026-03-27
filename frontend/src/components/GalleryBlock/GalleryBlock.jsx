@@ -36,7 +36,7 @@ function GalleryBlock({ gallery }) {
 
     return(
         <div className="gallery-block">
-            <h1>{gallery.title}</h1>
+            <h1 className="gallery-h1">{gallery.title}</h1>
             <div className="gallery-row">
                 <button className="button-left" onClick={() => handlePrev()} alt="Scroll Left.">&#10094;</button>
                 <div className="viewport">

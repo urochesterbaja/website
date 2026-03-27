@@ -215,6 +215,7 @@
   .nav-links.open {
     opacity: 1;
     visibility: visible;
+    margin-top: 0;
   }
 
   .nav-links li {
