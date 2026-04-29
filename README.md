@@ -8,13 +8,13 @@ This is the codebase for the University of Rochester BAJA SAE website. This docu
 Note that the sign-in information for all accounts as well as the DB architecture are stored in a separate document attached to the BAJA team's email address, and should remain PRIVATE.
 
 ### REQUIRED LIBRARIES/LOCAL HOST INSTRUCTIONS
-Prerequisites:
+#### Prerequisites:
 
 Node.js v18+
 
 Netlify CLI (npm install -g netlify-cli)
 
-To run locally:
+#### To run locally:
 
 -clone the repo
 
@@ -22,7 +22,7 @@ To run locally:
 
 -netlify dev
 
-To rebuild frontend for localhost:
+#### To rebuild frontend for localhost:
 
 -cd frontend
 
